@@ -110,26 +110,29 @@
                     <h3>{{ $mainTitle }}</h3>
                     <p>{{ .Site.Params.description }}</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Liên kết</h4>
-                    {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}">{{ .Name }}</a>
+                
+                {{ with .Site.Params.footer.columns }}
+                    {{ range . }}
+                    <div class="footer-col">
+                        <h4>{{ .title }}</h4>
+                        {{ if .use_menu }}
+                            {{ $menuName := .use_menu }}
+                            {{ range (index $.Site.Menus $menuName) }}
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                            {{ end }}
+                        {{ else if .links }}
+                            {{ range .links }}
+                            <a href="{{ .url | relURL }}">{{ .text }}</a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
                     {{ end }}
-                </div>
-                <div class="footer-col">
-                    <h4>Giải đấu</h4>
-                    <a href="/world-cup-2026/">World Cup 2026</a>
-                    <a href="/world-cup-2030/">World Cup 2030</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Theo dõi</h4>
-                    <a href="https://twitter.com/FIFAcom">Twitter</a>
-                    <a href="https://facebook.com/fifaworldcup">Facebook</a>
-                    <a href="https://youtube.com/FIFATV">YouTube</a>
-                </div>
+                {{ else }}
+                {{/* Fallback to default columns if no config is provided (optional, or leave empty as requested) */}}
+                {{ end }}
             </div>
             <div class="footer-bottom">
-                &copy; {{ now.Year }} {{ .Site.Title }}. Mọi quyền được bảo lưu.
+                &copy; {{ now.Year }} {{ .Site.Title }}. {{ T "copyright" }}
             </div>
         </div>
     </footer>

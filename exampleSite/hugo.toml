@@ -2,6 +2,11 @@ baseURL = 'http://localhost:1316/'
 languageCode = 'vi-vn'
 title = 'FIFA World Cup - Bóng Đá Thế Giới'
 
+[languages]
+  [languages.vi-vn]
+    weight = 1
+    languageName = 'Tiếng Việt'
+
 # Google Analytics
 googleAnalytics = 'G-F11WZVTXFJ'
 
@@ -20,8 +25,8 @@ keywords = 'FIFA World Cup, World Cup, bóng đá thế giới, World Cup 2026, 
 
 [params.logo]
 emoji = '🏆'
-title = 'FIFA World Cup1'
-subtitle = 'Cập nhật tin tức mới nhất3'
+title = 'FIFA World Cup'
+subtitle = 'Cập nhật tin tức mới nhất'
 
 
 [params.home]
@@ -29,8 +34,8 @@ layout = 'grid'
 title = 'Tin Tức Mới Nhất'
 
 [params.hero]
-title = 'FIFA World Cup2'
-subtitle = 'Cập nhật tin tức mới nhất4'
+title = 'FIFA World Cup'
+subtitle = 'Cập nhật tin tức mới nhất'
 teams = ['🇧🇷 Brazil', '🇦🇷 Argentina', '🇫🇷 Pháp', '🇩🇪 Đức', '🇪🇸 Tây Ban Nha']
 
 [params.colors]
@@ -47,6 +52,32 @@ twitter = 'https://twitter.com/FIFAcom'
 facebook = 'https://facebook.com/fifaworldcup'
 youtube = 'https://youtube.com/FIFATV'
 instagram = 'https://instagram.com/fifaworldcup'
+
+# Footer Configuration
+[[params.footer.columns]]
+  title = "Liên kết nhanh"
+  use_menu = "main"
+
+[[params.footer.columns]]
+  title = "Giải đấu"
+  [[params.footer.columns.links]]
+    text = "World Cup 2026"
+    url = "/world-cup-2026/"
+  [[params.footer.columns.links]]
+    text = "World Cup 2030"
+    url = "/world-cup-2030/"
+
+[[params.footer.columns]]
+  title = "Theo dõi chúng tôi"
+  [[params.footer.columns.links]]
+    text = "Twitter"
+    url = "https://twitter.com/FIFAcom"
+  [[params.footer.columns.links]]
+    text = "Facebook"
+    url = "https://facebook.com/fifaworldcup"
+  [[params.footer.columns.links]]
+    text = "YouTube"
+    url = "https://youtube.com/FIFATV"
 
 # Menu
 [menu]
@@ -74,3 +105,7 @@ target = "layouts"
 [[module.mounts]]
 source = "../static"
 target = "static"
+
+[[module.mounts]]
+source = "../i18n"
+target = "i18n"

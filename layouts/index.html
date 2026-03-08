@@ -19,7 +19,7 @@
         <div class="hero-content">
             <div class="hero-badge">{{ $emoji }} {{ $mainTitle | upper }}</div>
             <h1 class="hero-title">{{ .Site.Params.hero.title | default .Site.Title }}</h1>
-            <p class="hero-subtitle">{{ .Site.Params.hero.subtitle | default "Latest News" }}</p>
+            <p class="hero-subtitle">{{ .Site.Params.hero.subtitle | default (T "latest_news") }}</p>
             {{ if .Site.Params.hero.teams }}
             <div class="hero-teams">
                 {{ range .Site.Params.hero.teams }}
@@ -33,9 +33,9 @@
     <!-- Latest News -->
     <section class="news-section">
         <div class="section-header">
-            <h2 class="section-title">{{ $emoji }} {{ .Site.Params.home.title | default "Latest News" }}</h2>
+            <h2 class="section-title">{{ $emoji }} {{ .Site.Params.home.title | default (T "latest_news") }}</h2>
             <div class="section-count">
-                <span class="count-number">{{ len .Site.RegularPages }}</span> bài
+                <span class="count-number">{{ len .Site.RegularPages }}</span> {{ T "posts_count" }}
             </div>
         </div>
 
@@ -77,7 +77,7 @@
         <!-- View All Link -->
         <div class="view-all">
             <a href="/posts/" class="btn-view-all">
-                Xem tất cả tin tức
+                {{ T "view_all_news" }}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -89,8 +89,8 @@
     {{ if eq (len (where .Site.RegularPages "Type" "posts")) 0 }}
     <div class="empty-state">
         <div class="empty-icon">{{ $emoji }}</div>
-        <h3>Chưa có tin tức</h3>
-        <p>Nội dung sẽ được cập nhật sớm</p>
+        <h3>{{ T "no_news" }}</h3>
+        <p>{{ T "content_update_soon" }}</p>
     </div>
     {{ end }}
 </div>

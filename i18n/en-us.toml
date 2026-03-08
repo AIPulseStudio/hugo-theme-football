@@ -1,0 +1,35 @@
+[read_more]
+other = "Read More"
+
+[copyright]
+other = "All rights reserved."
+
+[latest_news]
+other = "Latest News"
+
+[follow_us]
+other = "Follow Us"
+
+[tournaments]
+other = "Tournaments"
+
+[links]
+other = "Links"
+
+[search]
+other = "Search"
+
+[view_all_news]
+other = "View all news"
+
+[posts_count]
+other = "posts"
+
+[no_news]
+other = "No news yet"
+
+[content_update_soon]
+other = "Content will be updated soon"
+
+[home]
+other = "Home"

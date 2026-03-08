@@ -1,0 +1,71 @@
+baseURL = 'http://localhost:1316/'
+languageCode = 'vi-vn'
+title = ''
+
+
+# Site Parameters
+[params]
+description = ''
+keywords = ''
+
+[params.logo]
+emoji = ''
+title = ''
+subtitle = ''
+
+
+[params.home]
+layout = 'grid'
+title = ''
+
+[params.hero]
+title = ''
+subtitle = ''
+teams = []
+
+[params.colors]
+primary = '#00A651'
+secondary = '#003087'
+accent = '#FFD100'
+gold = '#D4AF37'
+dark = '#1a1a1a'
+light = '#f8f9fa'
+
+# Social Media
+[params.social]
+twitter = 'https://twitter.com/FIFAcom'
+facebook = 'https://facebook.com/fifaworldcup'
+youtube = 'https://youtube.com/FIFATV'
+instagram = 'https://instagram.com/fifaworldcup'
+
+
+# Menu
+[menu]
+[[menu.main]]
+name = 'Trang chủ'
+url = '/'
+weight = 10
+
+[[menu.main]]
+name = 'Tin tức'
+url = '/posts/'
+weight = 20
+
+
+# Module mounts for local theme development
+[module]
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+[[module.mounts]]
+source = "i18n"
+target = "i18n"
