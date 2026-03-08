@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container">
+    <section class="section-hero">
+        <h1 class="section-title">{{ .Title }}</h1>
+    </section>
+    <section class="posts-section">
+        <div class="posts-grid-compact">
+            {{ range .Pages }}
+            <article class="small-card">
+                <a href="{{ .Permalink }}" class="card-link">
+                    {{ if .Params.image }}
+                    <div class="small-card-image">
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+                    </div>
+                    {{ end }}
+                    <div class="small-card-content">
+                        <h2 class="card-title">{{ .Title }}</h2>
+                        <div class="card-meta">
+                            <span>{{ .Date.Format "02/01/2006" }}</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </section>
+</div>
+{{ end }}

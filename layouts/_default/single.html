@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="article-page">
+    <div class="article-header">
+        <div class="article-breadcrumb">
+            <a href="/">Trang chủ</a>
+            <span class="sep">›</span>
+            {{ if .Params.category }}
+            <a href="/posts/">{{ .Params.category }}</a>
+            <span class="sep">›</span>
+            {{ end }}
+            <span class="current">{{ .Title }}</span>
+        </div>
+        <h1 class="article-title">{{ .Title }}</h1>
+        <div class="article-meta">
+            <span>{{ .Date.Format "02/01/2006" }}</span>
+            {{ if .Params.category }}
+            <span>• {{ .Params.category }}</span>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ if .Params.image }}
+    <div class="featured-image">
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+    </div>
+    {{ end }}
+
+    <div class="article-wrapper">
+        <article class="article-content">
+            {{ if .Summary }}
+            <p class="article-lead">{{ .Summary }}</p>
+            {{ end }}
+            <div class="article-body">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</div>
+{{ end }}

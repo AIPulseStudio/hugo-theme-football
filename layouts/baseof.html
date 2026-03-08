@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="keywords" content="{{ if .Params.keywords }}{{ .Params.keywords }}{{ else }}{{ .Site.Params.keywords }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Google Analytics -->
+    {{ if .Site.Config.Services.GoogleAnalytics.ID }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}');
+    </script>
+    {{ end }}
+
+    <!-- Dynamic Style Sheet -->
+    {{- $style := .Site.Params.style | default "fifa" -}}
+    <link id="theme-style" rel="stylesheet" href="/styles/{{ $style }}.css">
+
+    {{ block "styles" . }}{{ end }}
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-inner">
+                <div class="top-bar-left">
+                    <span>{{ .Site.Params.logo.emoji | default "⚽" }} {{ .Site.Title }}</span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="https://twitter.com/FIFAcom">Twitter</a>
+                    <a href="https://facebook.com/fifaworldcup">Facebook</a>
+                    <a href="https://youtube.com/FIFATV">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <div class="logo-trophy">{{ .Site.Params.logo.emoji | default "⚽" }}</div>
+                    <div class="logo-text">
+                        {{- $titleParts := split .Site.Title " - " -}}
+                        {{- $mainTitle := index $titleParts 0 -}}
+                        {{- $subTitle := "" -}}
+                        {{- if gt (len $titleParts) 1 -}}
+                        {{- $subTitle = index $titleParts 1 -}}
+                        {{- end -}}
+                        {{- if .Site.Params.logo.title -}}
+                        {{- $mainTitle = .Site.Params.logo.title -}}
+                        {{- end -}}
+                        {{- if .Site.Params.logo.subtitle -}}
+                        {{- $subTitle = .Site.Params.logo.subtitle -}}
+                        {{- end -}}
+                        <div class="logo-text-main">{{ $mainTitle }}</div>
+                        {{ if $subTitle }}
+                        <div class="logo-text-sub">{{ $subTitle }}</div>
+                        {{ end }}
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    {{- $mainTitle := "" -}}
+                    {{- if .Site.Params.logo.title -}}
+                        {{- $mainTitle = .Site.Params.logo.title -}}
+                    {{- else -}}
+                        {{- $titleParts := split .Site.Title " - " -}}
+                        {{- $mainTitle = index $titleParts 0 -}}
+                    {{- end -}}
+                    <h3>{{ $mainTitle }}</h3>
+                    <p>{{ .Site.Params.description }}</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên kết</h4>
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ end }}
+                </div>
+                <div class="footer-col">
+                    <h4>Giải đấu</h4>
+                    <a href="/world-cup-2026/">World Cup 2026</a>
+                    <a href="/world-cup-2030/">World Cup 2030</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Theo dõi</h4>
+                    <a href="https://twitter.com/FIFAcom">Twitter</a>
+                    <a href="https://facebook.com/fifaworldcup">Facebook</a>
+                    <a href="https://youtube.com/FIFATV">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; {{ now.Year }} {{ .Site.Title }}. Mọi quyền được bảo lưu.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

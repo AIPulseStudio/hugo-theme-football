@@ -1,0 +1,22 @@
+{
+  "name": "hugo-theme-football",
+  "version": "1.0.0",
+  "description": "A multi-style Hugo theme for football/soccer websites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AIPulseStudio/hugo-theme-football.git"
+  },
+  "keywords": [
+    "hugo",
+    "theme",
+    "football",
+    "soccer",
+    "sports"
+  ],
+  "author": "AIPulseStudio",
+  "license": "MIT"
+}

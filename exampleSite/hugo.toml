@@ -1,0 +1,76 @@
+baseURL = 'http://localhost:1316/'
+languageCode = 'vi-vn'
+title = 'FIFA World Cup - Bóng Đá Thế Giới'
+
+# Google Analytics
+googleAnalytics = 'G-F11WZVTXFJ'
+
+# Enable robots.txt
+enableRobotsTXT = true
+
+[sitemap]
+changefreq = 'daily'
+filename = 'sitemap.xml'
+priority = 0.5
+
+# Site Parameters
+[params]
+description = 'Tin tức mới nhất về FIFA World Cup - World Cup, tin tức về các đội tuyển quốc gia, cầu thủ xuất sắc, kết quả thi đấu, bảng xếp hạng và phân tích chuyên sâu.'
+keywords = 'FIFA World Cup, World Cup, bóng đá thế giới, World Cup 2026, World Cup 2030, Brazil, Argentina, Pháp, Đức, Bồ Đào Nha, Messi, Mbappe, Ronaldo'
+
+[params.logo]
+emoji = '🏆'
+title = 'FIFA World Cup1'
+subtitle = 'Cập nhật tin tức mới nhất3'
+
+
+[params.home]
+layout = 'grid'
+title = 'Tin Tức Mới Nhất'
+
+[params.hero]
+title = 'FIFA World Cup2'
+subtitle = 'Cập nhật tin tức mới nhất4'
+teams = ['🇧🇷 Brazil', '🇦🇷 Argentina', '🇫🇷 Pháp', '🇩🇪 Đức', '🇪🇸 Tây Ban Nha']
+
+[params.colors]
+primary = '#00A651'
+secondary = '#003087'
+accent = '#FFD100'
+gold = '#D4AF37'
+dark = '#1a1a1a'
+light = '#f8f9fa'
+
+# Social Media
+[params.social]
+twitter = 'https://twitter.com/FIFAcom'
+facebook = 'https://facebook.com/fifaworldcup'
+youtube = 'https://youtube.com/FIFATV'
+instagram = 'https://instagram.com/fifaworldcup'
+
+# Menu
+[menu]
+[[menu.main]]
+name = 'Trang chủ'
+url = '/'
+weight = 10
+
+[[menu.main]]
+name = 'Tin tức'
+url = '/posts/'
+weight = 20
+
+
+# Module mounts for local theme development
+[module]
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "../layouts"
+target = "layouts"
+
+[[module.mounts]]
+source = "../static"
+target = "static"

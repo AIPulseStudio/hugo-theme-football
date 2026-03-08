@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{- $emoji := .Site.Params.logo.emoji | default "⚽" -}}
+{{- $titleParts := split .Site.Title " - " -}}
+{{- $mainTitle := index $titleParts 0 -}}
+{{- $subTitle := "" -}}
+{{- if gt (len $titleParts) 1 -}}
+{{- $subTitle = index $titleParts 1 -}}
+{{- end -}}
+{{- if .Site.Params.logo.title -}}
+{{- $mainTitle = .Site.Params.logo.title -}}
+{{- end -}}
+{{- if .Site.Params.logo.subtitle -}}
+{{- $subTitle = .Site.Params.logo.subtitle -}}
+{{- end -}}
+<div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">{{ $emoji }} {{ $mainTitle | upper }}</div>
+            <h1 class="hero-title">{{ .Site.Params.hero.title | default .Site.Title }}</h1>
+            <p class="hero-subtitle">{{ .Site.Params.hero.subtitle | default "Latest News" }}</p>
+            {{ if .Site.Params.hero.teams }}
+            <div class="hero-teams">
+                {{ range .Site.Params.hero.teams }}
+                <span class="team-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="news-section">
+        <div class="section-header">
+            <h2 class="section-title">{{ $emoji }} {{ .Site.Params.home.title | default "Latest News" }}</h2>
+            <div class="section-count">
+                <span class="count-number">{{ len .Site.RegularPages }}</span> bài
+            </div>
+        </div>
+
+        <div class="news-grid">
+            {{ $posts := where .Site.RegularPages "Type" "posts" }}
+            {{ range first 12 $posts.ByDate.Reverse }}
+            <article class="news-card">
+                <a href="{{ .Permalink }}" class="news-link">
+                    <div class="news-image-wrapper">
+                        {{ if .Params.images }}
+                        <img src="{{ index .Params.images 0 | relURL }}" alt="{{ .Title }}" loading="lazy">
+                        {{ else if .Params.image }}
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" loading="lazy">
+                        {{ else }}
+                        <img src="/images/default-football.svg" alt="{{ .Title }}" loading="lazy">
+                        {{ end }}
+                        <div class="news-overlay"></div>
+                        {{ if .Params.category }}
+                        <span class="news-category">{{ .Params.category }}</span>
+                        {{ end }}
+                        <div class="news-date-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            {{ .Date.Format "02/01" }}
+                        </div>
+                    </div>
+                    <div class="news-info">
+                        <h3 class="news-title">{{ .Title }}</h3>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+
+        <!-- View All Link -->
+        <div class="view-all">
+            <a href="/posts/" class="btn-view-all">
+                Xem tất cả tin tức
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Empty State -->
+    {{ if eq (len (where .Site.RegularPages "Type" "posts")) 0 }}
+    <div class="empty-state">
+        <div class="empty-icon">{{ $emoji }}</div>
+        <h3>Chưa có tin tức</h3>
+        <p>Nội dung sẽ được cập nhật sớm</p>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

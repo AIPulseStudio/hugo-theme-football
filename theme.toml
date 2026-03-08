@@ -1,0 +1,13 @@
+name = "Football Theme"
+license = "MIT"
+licenselink = "https://github.com/AIPulseStudio/hugo-theme-football/blob/main/LICENSE"
+description = "A multi-style Hugo theme for football/soccer websites with FIFA, Premier League, La Liga, and Serie A styles"
+homepage = "https://github.com/AIPulseStudio/hugo-theme-football"
+demosite = "https://github.com/AIPulseStudio/hugo-theme-football"
+tags = ["blog", "responsive", "sports", "football", "soccer", "news", "magazine"]
+features = ["multi-style", "responsive", "fast", "minimal"]
+min_version = "0.112.0"
+
+[author]
+  name = "AIPulseStudio"
+  homepage = "https://github.com/AIPulseStudio"
