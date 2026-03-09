@@ -15,7 +15,8 @@ subtitle = ''
 
 
 [params.home]
-layout = 'grid'
+layout = 'grid'     # 可选值: "grid", "featured", "compact", "list", "waterfall"
+card_style = "standard" # 可选值: "standard", "comic", "star", "cartoon"， "cartoon"， "cartoon"， "brazil", "polish"
 title = ''
 
 [params.hero]

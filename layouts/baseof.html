@@ -32,7 +32,7 @@
     {{ end }}
 
     <!-- Dynamic Style Sheet -->
-    {{- $style := .Site.Params.style | default "fifa" -}}
+    {{- $style := .Site.Params.style | default "default" -}}
     <link id="theme-style" rel="stylesheet" href="/styles/{{ $style }}.css">
 
     {{ block "styles" . }}{{ end }}

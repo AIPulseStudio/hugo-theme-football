@@ -33,3 +33,9 @@ other = "Content will be updated soon"
 
 [home]
 other = "Home"
+
+[previous]
+other = "Previous"
+
+[next]
+other = "Next"

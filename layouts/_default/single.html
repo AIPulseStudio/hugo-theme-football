@@ -19,12 +19,6 @@
         </div>
     </div>
 
-    {{ if .Params.image }}
-    <div class="featured-image">
-        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
-    </div>
-    {{ end }}
-
     <div class="article-wrapper">
         <article class="article-content">
             {{ if .Summary }}

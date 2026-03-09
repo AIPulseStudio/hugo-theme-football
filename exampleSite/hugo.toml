@@ -3,9 +3,9 @@ languageCode = 'vi-vn'
 title = 'FIFA World Cup - Bóng Đá Thế Giới'
 
 [languages]
-  [languages.vi-vn]
-    weight = 1
-    languageName = 'Tiếng Việt'
+[languages.vi-vn]
+weight = 1
+languageName = 'Tiếng Việt'
 
 # Google Analytics
 googleAnalytics = 'G-F11WZVTXFJ'
@@ -18,8 +18,12 @@ changefreq = 'daily'
 filename = 'sitemap.xml'
 priority = 0.5
 
+# Pagination
+paginatePath = 'page'
+
 # Site Parameters
 [params]
+style = 'default'            # 可选值: "default" (绿色), "premium" (紫色), "bold" (红色), "clean" (蓝色)
 description = 'Tin tức mới nhất về FIFA World Cup - World Cup, tin tức về các đội tuyển quốc gia, cầu thủ xuất sắc, kết quả thi đấu, bảng xếp hạng và phân tích chuyên sâu.'
 keywords = 'FIFA World Cup, World Cup, bóng đá thế giới, World Cup 2026, World Cup 2030, Brazil, Argentina, Pháp, Đức, Bồ Đào Nha, Messi, Mbappe, Ronaldo'
 
@@ -30,7 +34,16 @@ subtitle = 'Cập nhật tin tức mới nhất'
 
 
 [params.home]
-layout = 'grid'
+# 可选值: "grid", "featured", "compact", "list", "waterfall", 
+#         "bento", "timeline", "magazine", "zigzag", "focus"
+layout = 'grid'            
+# 可选值: "standard", "comic", "star", "cartoon", "ocean", 
+#         "gradient", "glass", "diagonal", "orbit", "gallery", 
+#         "strip", "confetti", "crystal", "neon", "polaroid", 
+#         "minimal", "brutal", "soft", "glitch", "holographic" 
+card_style = "holographic"        
+columns = 3
+rows = 3
 title = 'Tin Tức Mới Nhất'
 
 [params.hero]
@@ -55,29 +68,29 @@ instagram = 'https://instagram.com/fifaworldcup'
 
 # Footer Configuration
 [[params.footer.columns]]
-  title = "Liên kết nhanh"
-  use_menu = "main"
+title = "Liên kết nhanh"
+use_menu = "main"
 
 [[params.footer.columns]]
-  title = "Giải đấu"
-  [[params.footer.columns.links]]
-    text = "World Cup 2026"
-    url = "/world-cup-2026/"
-  [[params.footer.columns.links]]
-    text = "World Cup 2030"
-    url = "/world-cup-2030/"
+title = "Giải đấu"
+[[params.footer.columns.links]]
+text = "World Cup 2026"
+url = "/world-cup-2026/"
+[[params.footer.columns.links]]
+text = "World Cup 2030"
+url = "/world-cup-2030/"
 
 [[params.footer.columns]]
-  title = "Theo dõi chúng tôi"
-  [[params.footer.columns.links]]
-    text = "Twitter"
-    url = "https://twitter.com/FIFAcom"
-  [[params.footer.columns.links]]
-    text = "Facebook"
-    url = "https://facebook.com/fifaworldcup"
-  [[params.footer.columns.links]]
-    text = "YouTube"
-    url = "https://youtube.com/FIFATV"
+title = "Theo dõi chúng tôi"
+[[params.footer.columns.links]]
+text = "Twitter"
+url = "https://twitter.com/FIFAcom"
+[[params.footer.columns.links]]
+text = "Facebook"
+url = "https://facebook.com/fifaworldcup"
+[[params.footer.columns.links]]
+text = "YouTube"
+url = "https://youtube.com/FIFATV"
 
 # Menu
 [menu]

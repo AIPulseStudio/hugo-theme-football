@@ -33,3 +33,9 @@ other = "Nội dung sẽ được cập nhật sớm"
 
 [home]
 other = "Trang chủ"
+
+[previous]
+other = "Trước"
+
+[next]
+other = "Sau"
