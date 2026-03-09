@@ -41,7 +41,7 @@ layout = 'grid'
 #         "gradient", "glass", "diagonal", "orbit", "gallery", 
 #         "strip", "confetti", "crystal", "neon", "polaroid", 
 #         "minimal", "brutal", "soft", "glitch", "holographic" 
-card_style = "holographic"        
+card_style = "comic"        
 columns = 3
 rows = 3
 title = 'Tin Tức Mới Nhất'
