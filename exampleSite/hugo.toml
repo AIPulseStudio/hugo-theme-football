@@ -13,17 +13,9 @@ googleAnalytics = 'G-F11WZVTXFJ'
 # Enable robots.txt
 enableRobotsTXT = true
 
-[sitemap]
-changefreq = 'daily'
-filename = 'sitemap.xml'
-priority = 0.5
-
-# Pagination
-paginatePath = 'page'
 
 # Site Parameters
 [params]
-style = 'default'            # 可选值: "default" (绿色), "premium" (紫色), "bold" (红色), "clean" (蓝色)
 description = 'Tin tức mới nhất về FIFA World Cup - World Cup, tin tức về các đội tuyển quốc gia, cầu thủ xuất sắc, kết quả thi đấu, bảng xếp hạng và phân tích chuyên sâu.'
 keywords = 'FIFA World Cup, World Cup, bóng đá thế giới, World Cup 2026, World Cup 2030, Brazil, Argentina, Pháp, Đức, Bồ Đào Nha, Messi, Mbappe, Ronaldo'
 
@@ -34,14 +26,17 @@ subtitle = 'Cập nhật tin tức mới nhất'
 
 
 [params.home]
-# 可选值: "grid", "featured", "compact", "list", "waterfall", 
+# 可选值: "green"(绿色), "purple"(紫色), "red"(红色), "blue"(蓝色),
+#         "orange"(橙色), "pink"(粉色), "teal"(青色), "dark"(深色)
+color = 'pink'
+# 可选值: "grid", "featured", "compact", "list", "waterfall",
 #         "bento", "timeline", "magazine", "zigzag", "focus"
-layout = 'grid'            
+layout = 'grid'
 # 可选值: "standard", "comic", "star", "cartoon", "ocean", 
 #         "gradient", "glass", "diagonal", "orbit", "gallery", 
 #         "strip", "confetti", "crystal", "neon", "polaroid", 
 #         "minimal", "brutal", "soft", "glitch", "holographic" 
-card_style = "comic"        
+card_style = "comic"
 columns = 3
 rows = 3
 title = 'Tin Tức Mới Nhất'
@@ -50,14 +45,6 @@ title = 'Tin Tức Mới Nhất'
 title = 'FIFA World Cup'
 subtitle = 'Cập nhật tin tức mới nhất'
 teams = ['🇧🇷 Brazil', '🇦🇷 Argentina', '🇫🇷 Pháp', '🇩🇪 Đức', '🇪🇸 Tây Ban Nha']
-
-[params.colors]
-primary = '#00A651'
-secondary = '#003087'
-accent = '#FFD100'
-gold = '#D4AF37'
-dark = '#1a1a1a'
-light = '#f8f9fa'
 
 # Social Media
 [params.social]

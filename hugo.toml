@@ -15,8 +15,17 @@ subtitle = ''
 
 
 [params.home]
-layout = 'grid'     # 可选值: "grid", "featured", "compact", "list", "waterfall"
-card_style = "standard" # 可选值: "standard", "comic", "star", "cartoon"， "cartoon"， "cartoon"， "brazil", "polish"
+# 可选值: "green"(绿色), "purple"(紫色), "red"(红色), "blue"(蓝色),
+#         "orange"(橙色), "pink"(粉色), "teal"(青色), "dark"(深色)
+color = 'pink'
+# 可选值: "grid", "featured", "compact", "list", "waterfall",
+#         "bento", "timeline", "magazine", "zigzag", "focus"
+layout = 'grid'
+# 可选值: "standard", "comic", "star", "cartoon", "ocean", 
+#         "gradient", "glass", "diagonal", "orbit", "gallery", 
+#         "strip", "confetti", "crystal", "neon", "polaroid", 
+#         "minimal", "brutal", "soft", "glitch", "holographic" 
+card_style = "comic"
 title = ''
 
 [params.hero]
@@ -24,13 +33,6 @@ title = ''
 subtitle = ''
 teams = []
 
-[params.colors]
-primary = '#00A651'
-secondary = '#003087'
-accent = '#FFD100'
-gold = '#D4AF37'
-dark = '#1a1a1a'
-light = '#f8f9fa'
 
 # Social Media
 [params.social]

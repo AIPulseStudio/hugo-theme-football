@@ -1,8 +1,8 @@
-/* Default Theme */
+/* Pink Theme */
 :root {
-    --primary: #00A651;
-    --primary-dark: #007a3d;
-    --primary-light: #00c966;
+    --primary: #E91E63;
+    --primary-dark: #C2185B;
+    --primary-light: #F06292;
     --secondary: #003087;
     --secondary-dark: #001f5a;
     --secondary-light: #0044aa;
@@ -13,8 +13,8 @@
     --light: #f8f9fa;
     --gray: #6c757d;
     --border: #e9ecef;
-    --shadow: rgba(0, 166, 81, 0.1);
-    --shadow-lg: rgba(0, 166, 81, 0.2);
+    --shadow: rgba(233, 30, 99, 0.1);
+    --shadow-lg: rgba(233, 30, 99, 0.2);
 }
 
 * {

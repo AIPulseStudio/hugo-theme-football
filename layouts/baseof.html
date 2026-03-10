@@ -32,8 +32,8 @@
     {{ end }}
 
     <!-- Dynamic Style Sheet -->
-    {{- $style := .Site.Params.style | default "default" -}}
-    <link id="theme-style" rel="stylesheet" href="/styles/{{ $style }}.css">
+    {{- $color := .Site.Params.home.color | default "green" -}}
+    <link id="theme-style" rel="stylesheet" href="/styles/{{ $color }}.css">
 
     {{ block "styles" . }}{{ end }}
 </head>
