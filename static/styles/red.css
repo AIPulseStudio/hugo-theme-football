@@ -1723,3 +1723,108 @@ footer {
     font-weight: 700;
 }
 
+
+/* ========================================
+   RED THEME UNIQUE LAYOUT
+   ======================================== */
+
+/* Red: 瀑布流错位布局 */
+body.theme-red .news-grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+body.theme-red .news-card {
+    break-inside: avoid;
+    margin-bottom: 20px;
+}
+
+body.theme-red .news-card:nth-child(3n+1) {
+    margin-top: 0;
+}
+
+body.theme-red .news-card:nth-child(3n+2) {
+    margin-top: 30px;
+}
+
+body.theme-red .news-card:nth-child(3n+3) {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    body.theme-red .news-grid {
+        column-count: 1;
+    }
+    body.theme-red .news-card {
+        margin-top: 0 !important;
+    }
+}
+
+/* ========================================
+   TAXONOMY PAGES (Categories, Tags)
+   ======================================== */
+
+.taxonomy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.taxonomy-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.taxonomy-item:hover {
+    box-shadow: 0 4px 20px var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.taxonomy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.taxonomy-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.taxonomy-emoji {
+    font-size: 1.3rem;
+}
+
+.taxonomy-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.count-number {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .taxonomy-list {
+        grid-template-columns: 1fr;
+    }
+}

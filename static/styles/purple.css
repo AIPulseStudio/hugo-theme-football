@@ -1723,3 +1723,124 @@ footer {
     font-weight: 700;
 }
 
+
+/* ========================================
+   PURPLE THEME UNIQUE LAYOUT
+   ======================================== */
+
+/* Purple: 顶部大卡片 + 下方网格 */
+body.theme-purple .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+body.theme-purple .news-grid .news-card:first-child {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+body.theme-purple .news-grid .news-card:first-child .news-link {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 350px;
+}
+
+body.theme-purple .news-grid .news-card:first-child .news-image-wrapper {
+    height: 100%;
+}
+
+body.theme-purple .news-grid .news-card:first-child .news-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body.theme-purple .news-grid .news-card:not(:first-child) {
+    width: calc(33.333% - 17px);
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    body.theme-purple .news-grid .news-card:first-child .news-link {
+        grid-template-columns: 1fr;
+    }
+    body.theme-purple .news-grid .news-card:not(:first-child) {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   TAXONOMY PAGES (Categories, Tags)
+   ======================================== */
+
+.taxonomy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.taxonomy-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.taxonomy-item:hover {
+    box-shadow: 0 4px 20px var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.taxonomy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.taxonomy-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.taxonomy-emoji {
+    font-size: 1.3rem;
+}
+
+.taxonomy-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.count-number {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .taxonomy-list {
+        grid-template-columns: 1fr;
+    }
+}

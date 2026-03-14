@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{- $emoji := .Site.Params.logo.emoji | default "⚽" -}}
+{{- $title := .Title -}}
+{{- $singular := .Data.Singular | default "category" -}}
+{{- $plural := .Data.Plural | default "categories" -}}
+<div class="container" style="padding-top: 20px;">
+    <section class="posts-section">
+        <div class="section-header">
+            <h2 class="section-title">{{ $emoji }} {{ .Title }}</h2>
+        </div>
+
+        <div class="taxonomy-list">
+            {{ range $key, $value := .Site.Taxonomies }}
+            {{ if eq $key $plural }}
+            {{ range $name, $pages := $value }}
+            <div class="taxonomy-item">
+                <a href="{{ printf "/%s/%s" $key $name | relURL }}" class="taxonomy-link">
+                    <div class="taxonomy-name">
+                        <span class="taxonomy-emoji">🏷️</span>
+                        {{ humanize $name }}
+                    </div>
+                    <div class="taxonomy-count">
+                        <span class="count-number">{{ len $pages }}</span> {{ T "posts" }}
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </section>
+</div>
+{{ end }}

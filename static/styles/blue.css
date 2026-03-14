@@ -1723,3 +1723,119 @@ footer {
     font-weight: 700;
 }
 
+
+/* ========================================
+   BLUE THEME UNIQUE LAYOUT
+   ======================================== */
+
+/* Blue: 横向卡片布局 */
+body.theme-blue .news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body.theme-blue .news-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+body.theme-blue .news-card .news-link {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 180px;
+}
+
+body.theme-blue .news-card .news-image-wrapper {
+    height: 100%;
+}
+
+body.theme-blue .news-card .news-info {
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    body.theme-blue .news-card .news-link {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    body.theme-blue .news-card .news-image-wrapper {
+        height: 200px;
+    }
+}
+
+/* ========================================
+   TAXONOMY PAGES (Categories, Tags)
+   ======================================== */
+
+.taxonomy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.taxonomy-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.taxonomy-item:hover {
+    box-shadow: 0 4px 20px var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.taxonomy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.taxonomy-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.taxonomy-emoji {
+    font-size: 1.3rem;
+}
+
+.taxonomy-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.count-number {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .taxonomy-list {
+        grid-template-columns: 1fr;
+    }
+}

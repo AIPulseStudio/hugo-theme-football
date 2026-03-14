@@ -2362,3 +2362,126 @@ footer {
 .infinite-scroll-end.show {
     display: block;
 }
+
+/* ========================================
+   TEAL THEME UNIQUE LAYOUT
+   ======================================== */
+
+/* Teal: 紧凑两栏布局，卡片偏右侧 */
+body.theme-teal .site-header {
+    padding: 15px 0;
+}
+
+body.theme-teal .header-inner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+body.theme-teal .logo {
+    justify-content: center;
+}
+
+body.theme-teal nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body.theme-teal .hero-section {
+    padding: 40px 0;
+}
+
+body.theme-teal .hero-title {
+    font-size: 2rem;
+}
+
+body.theme-teal .news-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+body.theme-teal .news-grid .news-card:first-child {
+    grid-column: 1 / -1;
+}
+
+body.theme-teal .news-grid .news-card:nth-child(2) {
+    grid-row: span 2;
+}
+
+@media (max-width: 768px) {
+    body.theme-teal .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   TAXONOMY PAGES (Categories, Tags)
+   ======================================== */
+
+.taxonomy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.taxonomy-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.taxonomy-item:hover {
+    box-shadow: 0 4px 20px var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.taxonomy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.taxonomy-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.taxonomy-emoji {
+    font-size: 1.3rem;
+}
+
+.taxonomy-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.count-number {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .taxonomy-list {
+        grid-template-columns: 1fr;
+    }
+}

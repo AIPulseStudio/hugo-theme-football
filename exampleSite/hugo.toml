@@ -2,10 +2,6 @@ baseURL = 'http://localhost:1316/'
 languageCode = 'vi-vn'
 title = 'FIFA World Cup - Bóng Đá Thế Giới'
 
-[languages]
-[languages.vi-vn]
-weight = 1
-languageName = 'Tiếng Việt'
 
 # Google Analytics
 googleAnalytics = 'G-F11WZVTXFJ'

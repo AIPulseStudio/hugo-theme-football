@@ -37,7 +37,7 @@
 
     {{ block "styles" . }}{{ end }}
 </head>
-<body>
+<body class="theme-{{ .Site.Params.home.color | default "green" }}">
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
