@@ -16,7 +16,10 @@ subtitle = ''
 
 [params.home]
 # 可选值: "green"(绿色), "purple"(紫色), "red"(红色), "blue"(蓝色),
-#         "orange"(橙色), "pink"(粉色), "teal"(青色), "dark"(深色)
+#         "orange"(橙色), "pink"(粉色), "teal"(青色), "dark"(深色),
+#         "yellow"(黄色), "indigo"(靛蓝), "violet"(紫罗兰), "cyan"(青色),
+#         "lime"(青柠), "amber"(琥珀色), "rose"(玫瑰红), "emerald"(祖母绿),
+#         "slate"(石板灰), "brown"(棕色)
 color = 'pink'
 # 可选值: "grid", "featured", "compact", "list", "waterfall",
 #         "bento", "timeline", "magazine", "zigzag", "focus"

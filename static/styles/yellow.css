@@ -1,20 +1,20 @@
-/* Orange Theme */
+/* Yellow Theme */
 :root {
-    --primary: #FF6B35;
-    --primary-dark: #E85A2B;
-    --primary-light: #FF8355;
-    --secondary: #003087;
-    --secondary-dark: #001f5a;
-    --secondary-light: #0044aa;
-    --accent: #FFD100;
-    --gold: #D4AF37;
+    --primary: #FFC107;
+    --primary-dark: #FFA000;
+    --primary-light: #FFECB3;
+    --secondary: #E65100;
+    --secondary-dark: #BF360C;
+    --secondary-light: #FF6F00;
+    --accent: #FF5722;
+    --gold: #FFB300;
     --dark: #1a1a1a;
     --darker: #0d0d0d;
     --light: #f8f9fa;
     --gray: #6c757d;
     --border: #e9ecef;
-    --shadow: rgba(255, 107, 53, 0.1);
-    --shadow-lg: rgba(255, 107, 53, 0.2);
+    --shadow: rgba(255, 193, 7, 0.15);
+    --shadow-lg: rgba(255, 193, 7, 0.25);
 }
 
 * {
@@ -102,7 +102,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 4px 20px rgba(255,209,0,0.4);
+    box-shadow: 0 4px 20px rgba(255,87,34,0.4);
 }
 
 .logo-text {
@@ -118,7 +118,7 @@ body {
 
 .logo-text-sub {
     font-size: 0.7rem;
-    color: var(--accent);
+    color: var(--dark);
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -197,8 +197,8 @@ main {
             45deg,
             transparent,
             transparent 60px,
-            rgba(255,209,0,0.05) 60px,
-            rgba(255,209,0,0.05) 120px
+            rgba(255,87,34,0.05) 60px,
+            rgba(255,87,34,0.05) 120px
         );
 }
 
@@ -211,7 +211,7 @@ main {
 .hero-badge {
     display: inline-block;
     background: var(--accent);
-    color: var(--dark);
+    color: white;
     padding: 8px 20px;
     border-radius: 30px;
     font-size: 0.8rem;
@@ -282,24 +282,21 @@ main {
     margin-bottom: 40px;
 }
 
-/* 1. Standard Grid */
 .layout-grid {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
 }
 
-/* 2. Compact Layout */
 .layout-compact {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
     gap: 15px;
 }
 
-/* 3. Featured Mixed Layout (1 Large Full-Width + N Small) */
 .layout-featured {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
 }
 
 .news-card-featured {
-    grid-column: 1 / -1; /* Spans all columns (Full Width) */
+    grid-column: 1 / -1;
     margin-bottom: 10px;
 }
 
@@ -338,12 +335,10 @@ main {
     line-height: 1.6;
 }
 
-/* 4. List Layout (Horizontal) */
 .layout-list {
     grid-template-columns: 1fr;
 }
 
-/* 5. Waterfall (Masonry) Layout */
 .layout-waterfall {
     display: block !important;
     column-count: var(--cols, 4);
@@ -358,21 +353,10 @@ main {
 }
 
 .layout-waterfall .news-image-wrapper {
-    aspect-ratio: unset; /* Remove fixed ratio for waterfall */
-}
-
-/* Create standardized image height for waterfall effect, card length varies by summary content */
-.layout-waterfall .news-image-wrapper {
+    aspect-ratio: unset;
     height: 250px;
     min-height: 250px;
     max-height: 250px;
-}
-
-.layout-waterfall .news-card {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-    break-inside: avoid;
 }
 
 .layout-waterfall .news-info {
@@ -380,7 +364,7 @@ main {
 }
 
 .layout-waterfall .news-summary {
-    display: block; 
+    display: block;
     margin-top: 15px;
     font-size: 1rem;
     color: var(--gray);
@@ -410,7 +394,6 @@ main {
     justify-content: center;
 }
 
-/* Fix for ocean card in list layout */
 .layout-list .card-style-ocean .news-image-wrapper {
     width: 320px;
     height: 180px;
@@ -440,7 +423,6 @@ main {
     justify-content: center;
 }
 
-/* Ensure title is visible in list layout with ocean card */
 .layout-list .card-style-ocean .news-title {
     color: #2C3E50;
     font-size: 1.1rem;
@@ -460,11 +442,7 @@ main {
     height: 100%;
 }
 
-/* ============================================
-   Additional Layout Styles
-   ============================================ */
-
-/* 6. Bento Layout - Apple-style Bento Box Grid */
+/* Additional Layout Styles */
 .layout-bento {
     display: grid !important;
     grid-template-columns: repeat(var(--cols, 4), 1fr);
@@ -510,7 +488,6 @@ main {
     justify-content: center;
 }
 
-/* 7. Timeline Layout - Vertical Timeline */
 .layout-timeline {
     display: block !important;
     max-width: 900px;
@@ -559,7 +536,6 @@ main {
     box-shadow: 0 0 0 4px var(--accent);
 }
 
-/* 8. Magazine Layout - Editorial Style */
 .layout-magazine {
     display: grid !important;
     grid-template-columns: 2fr 1fr 1fr;
@@ -608,7 +584,6 @@ main {
     padding: 15px;
 }
 
-/* 9. Zigzag Layout - Alternating Left/Right Pattern */
 .layout-zigzag {
     display: block !important;
     max-width: 1200px;
@@ -654,7 +629,6 @@ main {
     color: var(--gray);
 }
 
-/* 10. Focus Layout - Single Featured with Thumbnails */
 .layout-focus {
     display: block !important;
     max-width: 1200px;
@@ -722,22 +696,20 @@ main {
     overflow: hidden;
 }
 
-/* --- Card Styles (Skins) --- */
-
-/* Standard (FIFA Style) */
+/* Card Styles */
 .card-style-standard {
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 20px var(--shadow);
 }
 
-/* Star Style - Dark & Glow */
 .card-style-star {
     background: #0d1025;
     border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.15);
     overflow: hidden;
 }
+
 .card-style-star .news-image-wrapper {
     position: relative;
     height: 180px;
@@ -746,6 +718,7 @@ main {
     margin: 0;
     padding: 0;
 }
+
 .card-style-star .news-image-wrapper img {
     position: absolute;
     top: 0;
@@ -756,19 +729,23 @@ main {
     object-position: center center;
     display: block;
 }
+
 .card-style-star .news-title {
     color: white;
     font-family: serif;
     font-style: italic;
     letter-spacing: 0.5px;
 }
+
 .card-style-star:hover {
     border-color: #D4AF37;
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
+
 .card-style-star:hover .news-image-wrapper img {
     transform: none;
 }
+
 .card-style-star .news-date-badge {
     position: absolute !important;
     top: auto !important;
@@ -791,7 +768,6 @@ main {
     height: auto;
 }
 
-/* Comic Style - Hardcore Comic Design */
 .card-style-comic {
     background: #fff;
     border: 4px solid #000;
@@ -799,10 +775,12 @@ main {
     box-shadow: 6px 6px 0px #000;
     position: relative;
 }
+
 .card-style-comic:hover {
     transform: scale(1.05) rotate(-1.5deg);
     box-shadow: 10px 10px 0px #000;
 }
+
 .card-style-comic .news-title {
     font-weight: 900;
     text-transform: uppercase;
@@ -810,11 +788,12 @@ main {
     color: #000;
     line-height: 1.3;
 }
+
 .card-style-comic .news-image-wrapper {
     border-bottom: 4px solid #000;
-    background: #FDDA24; /* CPL Yellow Background */
+    background: #FDDA24;
 }
-/* Triangular Corner Accent */
+
 .card-style-comic .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -824,9 +803,10 @@ main {
     height: 0;
     border-style: solid;
     border-width: 0 40px 40px 0;
-    border-color: transparent #EF3340 transparent transparent; /* Belgian Red */
+    border-color: transparent #EF3340 transparent transparent;
     z-index: 6;
 }
+
 .card-style-comic .news-date-badge {
     top: auto;
     bottom: 12px;
@@ -841,6 +821,7 @@ main {
     box-shadow: none;
     transform: none;
 }
+
 .card-style-comic .news-summary {
     color: #333;
     font-weight: 600;
@@ -849,13 +830,13 @@ main {
     display: block;
 }
 
-/* Cartoon Style - Playful & Soft */
 .card-style-cartoon {
     background: #fff;
     border-radius: 30px;
     border: 4px solid #f0f0f0;
     box-shadow: 0 10px 0px #eee;
 }
+
 .card-style-cartoon .news-date-badge {
     top: 20px;
     left: -10px;
@@ -867,7 +848,6 @@ main {
     box-shadow: 0 4px 0px rgba(0,0,0,0.1);
 }
 
-/* Ocean Style - Pixel-Perfect Ocean Design */
 .card-style-ocean {
     background: #fff;
     border-radius: 20px;
@@ -876,7 +856,6 @@ main {
     transition: transform 0.4s;
 }
 
-/* Three-Color Accent Logic - 5px border bottom */
 .card-style-ocean.ocean-blue { border-bottom: 5px solid #0077BE; }
 .card-style-ocean.ocean-teal { border-bottom: 5px solid #20B2AA; }
 .card-style-ocean.ocean-orange { border-bottom: 5px solid #FF8C00; }
@@ -885,7 +864,6 @@ main {
     transform: translateY(-5px);
 }
 
-/* Image Container with Wave Overlay via ::before */
 .card-style-ocean .news-image-wrapper {
     position: relative;
     height: 180px;
@@ -895,7 +873,6 @@ main {
     padding: 0;
 }
 
-/* Semi-transparent wave overlay on image */
 .card-style-ocean .news-image-wrapper::before {
     content: '';
     position: absolute;
@@ -920,7 +897,6 @@ main {
     display: block;
 }
 
-/* Hide ocean-wave div - replaced with ::before pseudo-element */
 .card-style-ocean .ocean-wave {
     display: none;
 }
@@ -937,7 +913,6 @@ main {
     overflow: hidden;
 }
 
-/* Date badge positioned absolutely at bottom left of image */
 .card-style-ocean .news-date-badge {
     position: absolute !important;
     bottom: 10px;
@@ -959,11 +934,13 @@ main {
     width: auto;
     height: auto;
 }
+
 .card-style-ocean .news-date-badge svg {
     width: 11px !important;
     height: 11px !important;
     flex-shrink: 0;
 }
+
 .card-style-ocean.ocean-blue .news-date-badge { background: #0077BE; }
 .card-style-ocean.ocean-teal .news-date-badge { background: #20B2AA; }
 .card-style-ocean.ocean-orange .news-date-badge { background: #FF8C00; }
@@ -979,22 +956,17 @@ main {
     display: none;
 }
 
-/* Show summary in waterfall layout */
 .layout-waterfall .card-style-ocean .news-summary {
     display: block;
 }
 
-/* ============================================
-   Universal Card Styles
-   ============================================ */
-
-/* Gradient Style - Top Accent Bar Animation */
 .card-style-gradient {
     background: #fff;
     border-radius: 24px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     position: relative;
 }
+
 .card-style-gradient::before {
     content: '';
     position: absolute;
@@ -1002,23 +974,25 @@ main {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #FF6B9D, #C44BFF, #6B9BFF);
+    background: linear-gradient(90deg, #FFC107, #FF9800, #FF5722);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
+
 .card-style-gradient:hover::before {
     transform: scaleX(1);
 }
+
 .card-style-gradient .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 16px;
 }
+
 .card-style-gradient:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
-/* Glass Style - Glass Morphism with Gradient Background */
 .card-style-glass {
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(51, 65, 85, 0.95));
     border-radius: 16px;
@@ -1026,15 +1000,18 @@ main {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
+
 .card-style-glass .news-image-wrapper {
     aspect-ratio: 16/10;
 }
+
 .card-style-glass .news-title {
     color: #fff;
     text-transform: none;
     font-weight: 700;
     letter-spacing: 0.3px;
 }
+
 .card-style-glass .news-date-badge {
     top: 0;
     right: 0;
@@ -1045,54 +1022,58 @@ main {
     font-weight: 600;
     backdrop-filter: blur(5px);
 }
+
 .card-style-glass:hover {
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
-/* Diagonal Style - Modern Diagonal Design */
 .card-style-diagonal {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(117,170,219,0.15);
+    box-shadow: 0 8px 25px rgba(255,193,7,0.15);
     position: relative;
     overflow: hidden;
 }
+
 .card-style-diagonal .news-image-wrapper {
     aspect-ratio: 16/10;
 }
+
 .card-style-diagonal .news-title {
     color: #1A1A1A;
     font-weight: 700;
 }
+
 .card-style-diagonal .news-date-badge {
-    background: #75AADB;
+    background: #FFC107;
     color: #fff;
     border-radius: 20px;
     padding: 6px 16px;
 }
 
-/* Orbit Style - Circular Design */
 .card-style-orbit {
     background: #0A0A1A;
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,51,160,0.5);
+    box-shadow: 0 0 20px rgba(255,193,7,0.5);
 }
+
 .card-style-orbit .news-image-wrapper {
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: 4px solid #0033A0;
+    border: 4px solid #FFC107;
 }
+
 .card-style-orbit .news-title {
     color: #fff;
 }
+
 .card-style-orbit .news-date-badge {
-    background: #DA291C;
+    background: #FF5722;
     color: #fff;
 }
 
-/* Gallery Style - Frame Design */
 .card-style-gallery {
     background: #F4F5F0;
     border-radius: 0;
@@ -1100,24 +1081,27 @@ main {
     border: 2px solid #D4AF37;
     padding: 15px;
 }
+
 .card-style-gallery .news-image-wrapper {
     border: 1px solid #D4AF37;
 }
+
 .card-style-gallery .news-title {
     color: #1A1A1A;
     font-weight: 700;
 }
+
 .card-style-gallery .news-date-badge {
-    background: #008751;
+    background: #FFC107;
     color: #fff;
 }
 
-/* Strip Style - 2-Row Grid Layout */
 .card-style-strip {
     background: #F8FAFC;
     border-radius: 8px;
     border: 1px solid #E5E7EB;
 }
+
 .layout-grid .card-style-strip .news-link {
     display: grid;
     grid-template-areas:
@@ -1129,7 +1113,7 @@ main {
     gap: 8px;
     height: 150px;
 }
-/* Image styling - top left */
+
 .layout-grid .card-style-strip .news-image-wrapper {
     grid-area: image;
     width: 70px;
@@ -1140,10 +1124,11 @@ main {
     background: #E5E7EB;
     position: relative;
 }
+
 .layout-grid .card-style-strip .news-image-wrapper .news-date-badge {
     display: none;
 }
-/* Info area with title and date - top right */
+
 .layout-grid .card-style-strip .news-info {
     grid-area: info;
     padding: 0;
@@ -1151,6 +1136,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .layout-grid .card-style-strip .news-title {
     color: #1A1A2E;
     font-weight: 600;
@@ -1163,7 +1149,7 @@ main {
     overflow: hidden;
     max-height: 40px;
 }
-/* Date text displayed as plain text below title */
+
 .layout-grid .card-style-strip .news-info::after {
     content: attr(data-date);
     display: block;
@@ -1171,11 +1157,11 @@ main {
     font-size: 0.7rem;
     margin-top: auto;
 }
-/* Hide the styled date badge in news-info */
+
 .layout-grid .card-style-strip .news-info .news-date-badge {
     display: none !important;
 }
-/* Summary - second row full width */
+
 .layout-grid .card-style-strip .news-summary {
     grid-area: summary;
     display: block !important;
@@ -1190,7 +1176,7 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-/* Handle content in paragraph after news-summary */
+
 .layout-grid .card-style-strip .news-summary:empty + p {
     grid-area: summary;
     display: block !important;
@@ -1205,30 +1191,27 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 .layout-grid .card-style-strip .news-summary:empty {
     display: none;
 }
 
-/* Confetti Style - Colorful Top Border */
 .card-style-confetti {
     background:
-        /* Confetti pattern overlay */
-        radial-gradient(circle at 15% 20%, var(--confetti-1, rgba(255, 217, 61, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, var(--confetti-2, rgba(0, 217, 255, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 75% 80%, var(--confetti-3, rgba(255, 107, 107, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 25% 70%, var(--confetti-1, rgba(255, 217, 61, 0.06)) 0%, transparent 40%),
-        radial-gradient(circle at 65% 55%, var(--confetti-2, rgba(0, 217, 255, 0.06)) 0%, transparent 45%),
-        radial-gradient(circle at 35% 40%, var(--confetti-3, rgba(255, 107, 107, 0.06)) 0%, transparent 35%),
-        /* Small scattered dots */
-        radial-gradient(circle at 12% 15%, var(--confetti-1, rgba(255, 217, 61, 0.15)) 1px, transparent 1px),
-        radial-gradient(circle at 88% 12%, var(--confetti-2, rgba(0, 217, 255, 0.15)) 2px, transparent 2px),
-        radial-gradient(circle at 92% 85%, var(--confetti-3, rgba(255, 107, 107, 0.15)) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 8% 82%, var(--confetti-1, rgba(255, 217, 61, 0.12)) 2px, transparent 2px),
-        radial-gradient(circle at 45% 8%, var(--confetti-2, rgba(0, 217, 255, 0.12)) 1px, transparent 1px),
-        radial-gradient(circle at 78% 65%, var(--confetti-3, rgba(255, 107, 107, 0.12)) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 22% 48%, var(--confetti-1, rgba(255, 217, 61, 0.1)) 1px, transparent 1px),
-        radial-gradient(circle at 58% 92%, var(--confetti-2, rgba(0, 217, 255, 0.1)) 2px, transparent 2px),
-        /* Base white background */
+        radial-gradient(circle at 15% 20%, var(--confetti-1, rgba(255, 193, 7, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, var(--confetti-2, rgba(255, 87, 34, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 75% 80%, var(--confetti-3, rgba(255, 152, 0, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 25% 70%, var(--confetti-1, rgba(255, 193, 7, 0.06)) 0%, transparent 40%),
+        radial-gradient(circle at 65% 55%, var(--confetti-2, rgba(255, 87, 34, 0.06)) 0%, transparent 45%),
+        radial-gradient(circle at 35% 40%, var(--confetti-3, rgba(255, 152, 0, 0.06)) 0%, transparent 35%),
+        radial-gradient(circle at 12% 15%, var(--confetti-1, rgba(255, 193, 7, 0.15)) 1px, transparent 1px),
+        radial-gradient(circle at 88% 12%, var(--confetti-2, rgba(255, 87, 34, 0.15)) 2px, transparent 2px),
+        radial-gradient(circle at 92% 85%, var(--confetti-3, rgba(255, 152, 0, 0.15)) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 8% 82%, var(--confetti-1, rgba(255, 193, 7, 0.12)) 2px, transparent 2px),
+        radial-gradient(circle at 45% 8%, var(--confetti-2, rgba(255, 87, 34, 0.12)) 1px, transparent 1px),
+        radial-gradient(circle at 78% 65%, var(--confetti-3, rgba(255, 152, 0, 0.12)) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 22% 48%, var(--confetti-1, rgba(255, 193, 7, 0.1)) 1px, transparent 1px),
+        radial-gradient(circle at 58% 92%, var(--confetti-2, rgba(255, 87, 34, 0.1)) 2px, transparent 2px),
         #fff;
     background-blend-mode: normal;
     border-radius: 20px;
@@ -1237,119 +1220,122 @@ main {
     position: relative;
     overflow: hidden;
 }
-/* Yellow variant */
+
 .card-style-confetti:nth-child(3n+1) {
-    border-top-color: #FFD93D;
-    --confetti-1: rgba(255, 217, 61, 1);
-    --confetti-2: rgba(0, 217, 255, 1);
-    --confetti-3: rgba(255, 107, 107, 1);
+    border-top-color: #FFC107;
+    --confetti-1: rgba(255, 193, 7, 1);
+    --confetti-2: rgba(255, 87, 34, 1);
+    --confetti-3: rgba(255, 152, 0, 1);
     --icon-1: '✦';
     --icon-2: '◆';
     --icon-3: '★';
 }
-/* Cyan variant */
+
 .card-style-confetti:nth-child(3n+2) {
-    border-top-color: #00D9FF;
-    --confetti-1: rgba(0, 217, 255, 1);
-    --confetti-2: rgba(255, 107, 107, 1);
-    --confetti-3: rgba(255, 217, 61, 1);
+    border-top-color: #FF5722;
+    --confetti-1: rgba(255, 87, 34, 1);
+    --confetti-2: rgba(255, 152, 0, 1);
+    --confetti-3: rgba(255, 193, 7, 1);
     --icon-1: '◆';
     --icon-2: '★';
     --icon-3: '✦';
 }
-/* Red variant */
+
 .card-style-confetti:nth-child(3n+3) {
-    border-top-color: #FF6B6B;
-    --confetti-1: rgba(255, 107, 107, 1);
-    --confetti-2: rgba(255, 217, 61, 1);
-    --confetti-3: rgba(0, 217, 255, 1);
+    border-top-color: #FF9800;
+    --confetti-1: rgba(255, 152, 0, 1);
+    --confetti-2: rgba(255, 193, 7, 1);
+    --confetti-3: rgba(255, 87, 34, 1);
     --icon-1: '★';
     --icon-2: '✦';
     --icon-3: '◆';
 }
+
 .card-style-confetti .news-image-wrapper {
     height: 180px;
 }
-/* Card background decoration - right side icons */
+
 .card-style-confetti::before {
     content: var(--icon-1, '✦');
     position: absolute;
     top: 25%;
     right: 6%;
     font-size: 32px;
-    color: var(--confetti-1, rgba(255, 217, 61, 0.2));
+    color: var(--confetti-1, rgba(255, 193, 7, 0.2));
     z-index: 1;
     pointer-events: none;
 }
+
 .card-style-confetti::after {
     content: var(--icon-2, '◆');
     position: absolute;
     bottom: 35%;
     right: 12%;
     font-size: 24px;
-    color: var(--confetti-2, rgba(0, 217, 255, 0.2));
+    color: var(--confetti-2, rgba(255, 87, 34, 0.2));
     z-index: 1;
     pointer-events: none;
 }
-/* Third icon decoration */
+
 .card-style-confetti .news-link::before {
     content: var(--icon-3, '★');
     position: absolute;
     top: 55%;
     right: 3%;
     font-size: 20px;
-    color: var(--confetti-3, rgba(255, 107, 107, 0.2));
+    color: var(--confetti-3, rgba(255, 152, 0, 0.2));
     z-index: 1;
     pointer-events: none;
 }
+
 .card-style-confetti:hover {
     transform: translateY(-8px) rotate(1deg);
 }
+
 .card-style-confetti:hover::before {
     transform: scale(1.1) rotate(15deg);
     transition: transform 0.3s ease;
 }
+
 .card-style-confetti:hover::after {
     transform: scale(1.05) rotate(-10deg);
     transition: transform 0.3s ease;
 }
 
-/* Crystal Style - Geometric Watermark */
 .card-style-crystal {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     position: relative;
 }
+
 .card-style-crystal::after {
     content: '◆';
     position: absolute;
     bottom: 10px;
     right: 15px;
     font-size: 40px;
-    color: rgba(17, 69, 126, 0.1);
+    color: rgba(255, 193, 7, 0.1);
 }
+
 .card-style-crystal .news-title {
-    color: #11457E;
+    color: #E65100;
     font-weight: 700;
 }
+
 .card-style-crystal .news-date-badge {
-    background: #11457E;
+    background: #FFC107;
     color: #fff;
 }
 
-/* ============================================
-   Additional Universal Card Styles
-   ============================================ */
-
-/* Neon Style - Glowing Neon Effect */
 .card-style-neon {
     background: #0a0a0a;
     border-radius: 12px;
-    border: 2px solid #00ff88;
-    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, inset 0 0 10px rgba(0, 255, 136, 0.1);
+    border: 2px solid #FFC107;
+    box-shadow: 0 0 10px #FFC107, 0 0 20px #FFC107, inset 0 0 10px rgba(255, 193, 7, 0.1);
     position: relative;
 }
+
 .card-style-neon::before {
     content: '';
     position: absolute;
@@ -1357,7 +1343,7 @@ main {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #00ff88, #00d4ff, #ff00ff, #00ff88);
+    background: linear-gradient(45deg, #FFC107, #FF9800, #FF5722, #FFC107);
     background-size: 400% 400%;
     border-radius: 12px;
     z-index: -1;
@@ -1365,35 +1351,30 @@ main {
     filter: blur(8px);
     opacity: 0.7;
 }
+
 @keyframes neonGlow {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
 .card-style-neon:hover {
-    box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, inset 0 0 20px rgba(0, 255, 136, 0.2);
-}
-.card-style-neon .news-title {
-    color: #00ff88;
-    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-    font-weight: 700;
-}
-.card-style-neon .news-info {
-    background: transparent;
-}
-.card-style-neon .news-summary {
-    color: #00ff88;
-    opacity: 0.85;
-    background: transparent;
-}
-.card-style-neon .news-date-badge {
-    background: transparent;
-    border: 2px solid #00d4ff;
-    color: #00d4ff;
-    text-shadow: 0 0 5px #00d4ff;
-    box-shadow: 0 0 10px #00d4ff, inset 0 0 10px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px #FFC107, 0 0 40px #FFC107, inset 0 0 20px rgba(255, 193, 7, 0.2);
 }
 
-/* Polaroid Style - Instant Photo Design */
+.card-style-neon .news-title {
+    color: #FFC107;
+    text-shadow: 0 0 10px #FFC107, 0 0 20px #FFC107;
+    font-weight: 700;
+}
+
+.card-style-neon .news-date-badge {
+    background: transparent;
+    border: 2px solid #FF9800;
+    color: #FF9800;
+    text-shadow: 0 0 5px #FF9800;
+    box-shadow: 0 0 10px #FF9800, inset 0 0 10px rgba(255, 152, 0, 0.2);
+}
+
 .card-style-polaroid {
     background: #fff;
     border-radius: 2px;
@@ -1403,19 +1384,23 @@ main {
     transform: rotate(-1deg);
     transition: transform 0.3s ease;
 }
+
 .card-style-polaroid:nth-child(even) {
     transform: rotate(1deg);
 }
+
 .card-style-polaroid:hover {
     transform: rotate(0deg) scale(1.02);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
 .card-style-polaroid .news-image-wrapper {
     aspect-ratio: 16/10;
     background: #f5f5f5;
     border-radius: 2px;
     filter: saturate(1.1) contrast(1.05);
 }
+
 .card-style-polaroid .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -1426,6 +1411,7 @@ main {
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
     pointer-events: none;
 }
+
 .card-style-polaroid .news-title {
     color: #333;
     font-family: 'Courier New', monospace;
@@ -1434,11 +1420,12 @@ main {
     padding: 15px 5px 0 5px;
     line-height: 1.5;
 }
+
 .card-style-polaroid .news-date-badge {
     top: 20px;
     left: 20px;
     background: rgba(255,255,255,0.9);
-    color: #c41e3a;
+    color: #E65100;
     font-family: 'Courier New', monospace;
     font-size: 0.7rem;
     font-weight: 700;
@@ -1446,7 +1433,6 @@ main {
     border-radius: 2px;
 }
 
-/* Minimal Style - Ultra Minimalist */
 .card-style-minimal {
     background: #fafafa;
     border: 1px solid #e0e0e0;
@@ -1454,24 +1440,29 @@ main {
     box-shadow: none;
     transition: all 0.3s ease;
 }
+
 .card-style-minimal:hover {
     border-color: #333;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
 .card-style-minimal .news-image-wrapper {
     aspect-ratio: 16/10;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
+
 .card-style-minimal:hover .news-image-wrapper {
     filter: grayscale(0%);
 }
+
 .card-style-minimal .news-title {
     color: #333;
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: -0.02em;
 }
+
 .card-style-minimal .news-date-badge {
     top: 15px;
     left: 15px;
@@ -1484,15 +1475,15 @@ main {
     letter-spacing: 0.05em;
 }
 
-/* Brutal Style - Neo-Brutalism Bold */
 .card-style-brutal {
-    background: #FFE500;
+    background: #FFC107;
     border: 4px solid #000;
     border-radius: 0;
     box-shadow: 8px 8px 0px #000;
     position: relative;
     transition: all 0.2s ease;
 }
+
 .card-style-brutal::after {
     content: '★';
     position: absolute;
@@ -1501,15 +1492,18 @@ main {
     font-size: 24px;
     color: #000;
 }
+
 .card-style-brutal:hover {
     transform: translate(-4px, -4px);
     box-shadow: 12px 12px 0px #000;
 }
+
 .card-style-brutal .news-image-wrapper {
     aspect-ratio: 16/10;
     border-bottom: 4px solid #000;
     filter: contrast(1.2) saturate(1.3);
 }
+
 .card-style-brutal .news-title {
     color: #000;
     font-weight: 900;
@@ -1517,9 +1511,10 @@ main {
     font-size: 1.2rem;
     letter-spacing: -0.02em;
 }
+
 .card-style-brutal .news-date-badge {
     background: #000;
-    color: #FFE500;
+    color: #FFC107;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 0.7rem;
@@ -1527,27 +1522,30 @@ main {
     border-radius: 0;
 }
 
-/* Soft Style - Soft UI Design */
 .card-style-soft {
     background: linear-gradient(145deg, #f0f0f0, #ffffff);
     border-radius: 30px;
     box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
     border: none;
 }
+
 .card-style-soft:hover {
     box-shadow: 25px 25px 70px #d1d1d1, -25px -25px 70px #ffffff;
 }
+
 .card-style-soft .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 20px;
     margin: 15px;
     box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1), inset -5px -5px 15px rgba(255,255,255,0.7);
 }
+
 .card-style-soft .news-title {
     color: #555;
     font-weight: 600;
     padding: 0 20px;
 }
+
 .card-style-soft .news-date-badge {
     background: linear-gradient(145deg, #e0e0e0, #ffffff);
     color: #666;
@@ -1557,14 +1555,14 @@ main {
     box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px rgba(255,255,255,0.7);
 }
 
-/* Glitch Style - Cyberpunk Glitch Effect */
 .card-style-glitch {
     background: #1a1a2e;
     border-radius: 8px;
-    border: 2px solid #ff00ff;
+    border: 2px solid #FFC107;
     position: relative;
     overflow: hidden;
 }
+
 .card-style-glitch::before {
     content: '';
     position: absolute;
@@ -1572,16 +1570,19 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,0,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,193,7,0.3), transparent);
     animation: glitchScan 3s infinite;
 }
+
 @keyframes glitchScan {
     0% { left: -100%; }
     50%, 100% { left: 100%; }
 }
+
 .card-style-glitch:hover {
     animation: glitchShake 0.3s ease;
 }
+
 @keyframes glitchShake {
     0%, 100% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
@@ -1589,49 +1590,55 @@ main {
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
 }
+
 .card-style-glitch .news-image-wrapper {
     aspect-ratio: 16/10;
     filter: hue-rotate(90deg) contrast(1.2);
 }
+
 .card-style-glitch .news-title {
-    color: #00ffff;
+    color: #FFC107;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    text-shadow: 2px 0 #FF5722, -2px 0 #FF9800;
 }
+
 .card-style-glitch .news-date-badge {
-    background: #ff00ff;
+    background: #FFC107;
     color: #000;
     font-weight: 900;
     text-transform: uppercase;
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
 
-/* Holographic Style - Rainbow Holographic */
 .card-style-holographic {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background: linear-gradient(135deg, #FFC107 0%, #FF9800 25%, #FF5722 50%, #FF9800 75%, #FFC107 100%);
     background-size: 400% 400%;
     border-radius: 20px;
     padding: 3px;
     animation: holographicShift 8s ease infinite;
 }
+
 @keyframes holographicShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
 .card-style-holographic .news-card-inner {
     background: rgba(255,255,255,0.95);
     border-radius: 17px;
     padding: 16px;
     height: 100%;
 }
+
 .card-style-holographic .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
 }
+
 .card-style-holographic .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -1642,25 +1649,26 @@ main {
     background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
     animation: holographicShine 3s infinite;
 }
+
 @keyframes holographicShine {
     0% { transform: translateX(-100%) rotate(45deg); }
     100% { transform: translateX(100%) rotate(45deg); }
 }
+
 .card-style-holographic .news-title {
-    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    background: linear-gradient(135deg, #FFC107, #FF9800, #FF5722);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
 }
+
 .card-style-holographic .news-date-badge {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #FFC107, #FF9800);
     color: #fff;
     border-radius: 20px;
     font-weight: 700;
 }
-
-/* --- End of Card Styles --- */
 
 .news-card {
     overflow: hidden;
@@ -1696,7 +1704,7 @@ main {
     left: 0;
     right: 0;
     height: 50%;
-    background: linear-gradient(to top, rgba(0,48,135,0.9) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(230,81,0,0.9) 0%, transparent 100%);
 }
 
 .news-category {
@@ -1835,7 +1843,7 @@ main {
 .btn-view-all:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 166, 81, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
 }
 
 /* Empty State */
@@ -2164,12 +2172,6 @@ footer {
         gap: 15px;
     }
 
-    /* Waterfall Layout Mobile - single column */
-    .layout-waterfall {
-        column-count: 1 !important;
-    }
-
-    /* List Layout Mobile */
     .layout-list .news-link {
         flex-direction: column;
         gap: 15px;
@@ -2190,7 +2192,6 @@ footer {
         justify-content: center;
     }
 
-    /* Zigzag Layout Mobile */
     .layout-zigzag .news-card,
     .layout-zigzag .news-card:nth-child(even) {
         flex-direction: column;
@@ -2210,7 +2211,6 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* Bento Layout Mobile */
     .layout-bento {
         grid-template-columns: 1fr;
         grid-auto-rows: 250px;
@@ -2238,12 +2238,10 @@ footer {
         width: 100%;
     }
 
-    /* Timeline Layout Mobile */
     .layout-timeline {
         padding-left: 40px;
     }
 
-    /* Magazine Layout Mobile */
     .layout-magazine {
         grid-template-columns: 1fr;
     }
@@ -2263,7 +2261,6 @@ footer {
         width: 100%;
     }
 
-    /* Focus Layout Mobile */
     .layout-focus .news-card:first-child .news-link {
         flex-direction: column;
         height: auto;
@@ -2302,19 +2299,6 @@ footer {
         font-size: 0.85rem;
     }
 
-    /* Ensure neon card text color on mobile */
-    .card-style-neon .news-title {
-        color: #00ff88 !important;
-        text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88 !important;
-    }
-
-    /* Ensure neon card summary text color on mobile - waterfall layout */
-    .layout-waterfall .card-style-neon .news-summary {
-        display: block !important;
-        color: #00ff88 !important;
-        opacity: 0.85 !important;
-    }
-
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -2338,14 +2322,12 @@ footer {
     }
 }
 
-/* Hide pagination on mobile, use infinite scroll instead */
 @media (max-width: 768px) {
     .pagination {
         display: none;
     }
 }
 
-/* Infinite scroll loading indicator */
 .infinite-scroll-loading {
     display: none;
     text-align: center;
@@ -2390,54 +2372,287 @@ footer {
 }
 
 /* ========================================
-   ORANGE THEME UNIQUE LAYOUT
+   YELLOW THEME UNIQUE LAYOUT
    ======================================== */
 
-/* Orange: 斜角卡片布局 */
-body.theme-orange .news-grid {
+/* Yellow: 阳光活力射线布局 */
+body.theme-yellow .news-grid {
     display: grid;
-    gap: 20px;
-    transform: skewY(-2deg);
-    margin: 20px 0;
+    gap: 32px;
+    padding: 25px 0;
 }
 
-body.theme-orange .news-card {
-    transform: skewY(2deg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+body.theme-yellow .news-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(255, 193, 7, 0.18);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(145deg, #FFFDE7 0%, #ffffff 100%);
+    position: relative;
 }
 
-body.theme-orange .news-card:hover {
-    transform: skewY(2deg) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+/* 阳光射线效果 */
+body.theme-yellow .news-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%,
+        transparent 0deg,
+        rgba(255, 193, 7, 0.03) 30deg,
+        transparent 60deg);
+    animation: sunRays 20s linear infinite;
+    pointer-events: none;
 }
 
-body.theme-orange .hero-section {
-    transform: skewY(-2deg);
+@keyframes sunRays {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+body.theme-yellow .news-card:hover {
+    box-shadow: 0 18px 55px rgba(255, 193, 7, 0.35);
+    transform: translateY(-10px) scale(1.02);
+}
+
+body.theme-yellow .news-card .news-image-wrapper {
+    border-radius: 10px;
+    margin: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(255, 111, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+body.theme-yellow .news-card .news-info {
+    padding: 12px 22px 22px;
+    position: relative;
+    z-index: 1;
+}
+
+body.theme-yellow .news-card .news-title {
+    font-weight: 800;
+    color: #BF360C;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+}
+
+body.theme-yellow .news-card .news-date-badge {
+    background: linear-gradient(135deg, #FFC107, #FF9800);
+    color: #1a1a1a;
+    border-radius: 8px 8px 20px 20px;
+    padding: 8px 18px;
+    font-weight: 900;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Yellow 独特 Logo 样式 - 太阳光芒效果 */
+body.theme-yellow .logo-trophy {
+    width: 75px;
+    height: 75px;
+    background: conic-gradient(from 45deg, #FFC107, #FF9800, #FF5722, #FFC107);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 0 30px rgba(255, 193, 7, 0.6), 0 0 60px rgba(255, 152, 0, 0.4);
+    animation: logoGlow 3s ease-in-out infinite;
+    position: relative;
+}
+
+body.theme-yellow .logo-trophy::before {
+    content: '';
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: conic-gradient(from 225deg, #FFC107, #FF9800, #FF5722, #FFC107);
+    animation: sunRays 10s linear infinite;
+    z-index: -1;
+}
+
+body.theme-yellow .logo-trophy::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    animation: pulseRing 2s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.6), 0 0 60px rgba(255, 152, 0, 0.4); }
+    50% { box-shadow: 0 0 50px rgba(255, 193, 7, 0.8), 0 0 80px rgba(255, 152, 0, 0.5); }
+}
+
+@keyframes pulseRing {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.3); opacity: 0; }
+}
+
+body.theme-yellow .logo-text-main {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 0px #FF9800, 4px 4px 0px #FF5722;
+}
+
+body.theme-yellow .logo-text-sub {
+    font-size: 0.75rem;
+    color: #FFF;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #FF9800, #FF5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Yellow 独特 Hero 样式 - 阳光普照 */
+body.theme-yellow .hero-section {
+    position: relative;
+    padding: 80px 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255, 193, 7, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(255, 152, 0, 0.3) 0%, transparent 40%),
+        linear-gradient(135deg, #FFC107 0%, #FF9800 50%, #FF5722 100%);
+    box-shadow: 0 20px 60px rgba(255, 193, 7, 0.4), inset 0 0 100px rgba(255,255,255,0.1);
+}
+
+body.theme-yellow .hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 235, 59, 0.3) 0%, transparent 60%);
+    animation: heroSunGlow 8s ease-in-out infinite alternate;
+}
+
+body.theme-yellow .hero-section::after {
+    content: '☀';
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 80px;
+    opacity: 0.3;
+    animation: sunFloat 4s ease-in-out infinite;
+}
+
+@keyframes heroSunGlow {
+    0% { transform: translate(-10%, -10%); }
+    100% { transform: translate(10%, 10%); }
+}
+
+@keyframes sunFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+body.theme-yellow .hero-content {
+    position: relative;
+    z-index: 2;
+    color: #1a1a1a;
+}
+
+body.theme-yellow .hero-badge {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #FFC107;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 3px;
     margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    text-transform: uppercase;
 }
 
-body.theme-orange .hero-content {
-    transform: skewY(2deg);
+body.theme-yellow .hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+    text-shadow: 3px 3px 0px rgba(255,255,255,0.5), 6px 6px 0px rgba(255,152,0,0.3);
+}
+
+body.theme-yellow .hero-subtitle {
+    font-size: 1.2rem;
+    color: rgba(26,26,26,0.85);
+    margin-bottom: 35px;
+    max-width: 650px;
+    font-weight: 600;
+}
+
+body.theme-yellow .team-tag {
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 2px solid rgba(26,26,26,0.2);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body.theme-yellow .site-header {
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 35px rgba(255, 111, 0, 0.25);
+}
+
+body.theme-yellow .logo-trophy {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 @media (max-width: 768px) {
-    body.theme-orange .news-grid,
-    body.theme-orange .hero-section {
-        transform: none;
+    body.theme-yellow .news-card {
+        border-radius: 10px;
     }
-    body.theme-orange .news-card {
-        transform: none;
+
+    body.theme-yellow .news-card .news-image-wrapper {
+        margin: 10px;
+        border-radius: 8px;
     }
-    body.theme-orange .news-card:hover {
-        transform: translateY(-5px);
+
+    body.theme-yellow .hero-section {
+        background: linear-gradient(135deg, #FFEB3B 0%, #FF9800 100%);
+        padding: 50px 25px;
+    }
+
+    body.theme-yellow .hero-section::after {
+        font-size: 50px;
+    }
+
+    body.theme-yellow .hero-title {
+        font-size: 2rem;
+    }
+
+    body.theme-yellow .logo-trophy {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
     }
 }
 
-
-/* ========================================
-   TAXONOMY PAGES (Categories, Tags)
-   ======================================== */
-
+/* Taxonomy Pages */
 .taxonomy-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -2492,13 +2707,57 @@ body.theme-orange .hero-content {
     font-weight: 500;
 }
 
-.count-number {
-    font-weight: 700;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     .taxonomy-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   YELLOW THEME - UNIQUE CONTENT LAYOUT
+   ======================================== */
+
+/* Yellow: 居中对称布局 - Logo和Hero都居中显示 */
+body.theme-yellow .logo {
+    justify-content: center;
+}
+
+body.theme-yellow .logo-text {
+    text-align: center;
+}
+
+body.theme-yellow .hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.theme-yellow .hero-badge {
+    order: 3;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+body.theme-yellow .hero-title {
+    order: 1;
+    margin-bottom: 10px;
+}
+
+body.theme-yellow .hero-subtitle {
+    order: 2;
+    margin-bottom: 15px;
+}
+
+body.theme-yellow .hero-teams {
+    order: 4;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    body.theme-yellow .hero-badge {
+        order: 1;
+        margin-bottom: 20px;
+        margin-top: 0;
     }
 }

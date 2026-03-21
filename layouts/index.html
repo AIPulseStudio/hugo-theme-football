@@ -49,7 +49,7 @@
         {{ $posts := where .Site.RegularPages "Type" "posts" }}
         {{ $paginator := .Paginate $posts $pageSize }}
 
-        <div class="news-grid layout-{{ $layout }}" style="--cols: {{ $cols }};">
+        <div class="news-grid layout-{{ $layout }}">
             {{ range $index, $post := $paginator.Pages }}
             
             {{/* Special color cycling for Ocean style */}}

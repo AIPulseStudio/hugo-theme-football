@@ -1,20 +1,20 @@
-/* Orange Theme */
+/* Indigo Theme */
 :root {
-    --primary: #FF6B35;
-    --primary-dark: #E85A2B;
-    --primary-light: #FF8355;
-    --secondary: #003087;
-    --secondary-dark: #001f5a;
-    --secondary-light: #0044aa;
-    --accent: #FFD100;
-    --gold: #D4AF37;
+    --primary: #3F51B5;
+    --primary-dark: #303F9F;
+    --primary-light: #757DE8;
+    --secondary: #1A237E;
+    --secondary-dark: #000051;
+    --secondary-light: #534bae;
+    --accent: #FFD740;
+    --gold: #FFC400;
     --dark: #1a1a1a;
     --darker: #0d0d0d;
     --light: #f8f9fa;
     --gray: #6c757d;
     --border: #e9ecef;
-    --shadow: rgba(255, 107, 53, 0.1);
-    --shadow-lg: rgba(255, 107, 53, 0.2);
+    --shadow: rgba(63, 81, 181, 0.12);
+    --shadow-lg: rgba(63, 81, 181, 0.22);
 }
 
 * {
@@ -102,7 +102,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 4px 20px rgba(255,209,0,0.4);
+    box-shadow: 0 4px 20px rgba(255,215,64,0.4);
 }
 
 .logo-text {
@@ -197,8 +197,8 @@ main {
             45deg,
             transparent,
             transparent 60px,
-            rgba(255,209,0,0.05) 60px,
-            rgba(255,209,0,0.05) 120px
+            rgba(255,215,64,0.05) 60px,
+            rgba(255,215,64,0.05) 120px
         );
 }
 
@@ -282,24 +282,21 @@ main {
     margin-bottom: 40px;
 }
 
-/* 1. Standard Grid */
 .layout-grid {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
 }
 
-/* 2. Compact Layout */
 .layout-compact {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
     gap: 15px;
 }
 
-/* 3. Featured Mixed Layout (1 Large Full-Width + N Small) */
 .layout-featured {
     grid-template-columns: repeat(var(--cols, 4), 1fr);
 }
 
 .news-card-featured {
-    grid-column: 1 / -1; /* Spans all columns (Full Width) */
+    grid-column: 1 / -1;
     margin-bottom: 10px;
 }
 
@@ -338,12 +335,10 @@ main {
     line-height: 1.6;
 }
 
-/* 4. List Layout (Horizontal) */
 .layout-list {
     grid-template-columns: 1fr;
 }
 
-/* 5. Waterfall (Masonry) Layout */
 .layout-waterfall {
     display: block !important;
     column-count: var(--cols, 4);
@@ -358,21 +353,10 @@ main {
 }
 
 .layout-waterfall .news-image-wrapper {
-    aspect-ratio: unset; /* Remove fixed ratio for waterfall */
-}
-
-/* Create standardized image height for waterfall effect, card length varies by summary content */
-.layout-waterfall .news-image-wrapper {
+    aspect-ratio: unset;
     height: 250px;
     min-height: 250px;
     max-height: 250px;
-}
-
-.layout-waterfall .news-card {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-    break-inside: avoid;
 }
 
 .layout-waterfall .news-info {
@@ -380,7 +364,7 @@ main {
 }
 
 .layout-waterfall .news-summary {
-    display: block; 
+    display: block;
     margin-top: 15px;
     font-size: 1rem;
     color: var(--gray);
@@ -410,7 +394,6 @@ main {
     justify-content: center;
 }
 
-/* Fix for ocean card in list layout */
 .layout-list .card-style-ocean .news-image-wrapper {
     width: 320px;
     height: 180px;
@@ -440,7 +423,6 @@ main {
     justify-content: center;
 }
 
-/* Ensure title is visible in list layout with ocean card */
 .layout-list .card-style-ocean .news-title {
     color: #2C3E50;
     font-size: 1.1rem;
@@ -460,11 +442,7 @@ main {
     height: 100%;
 }
 
-/* ============================================
-   Additional Layout Styles
-   ============================================ */
-
-/* 6. Bento Layout - Apple-style Bento Box Grid */
+/* Additional Layout Styles */
 .layout-bento {
     display: grid !important;
     grid-template-columns: repeat(var(--cols, 4), 1fr);
@@ -510,7 +488,6 @@ main {
     justify-content: center;
 }
 
-/* 7. Timeline Layout - Vertical Timeline */
 .layout-timeline {
     display: block !important;
     max-width: 900px;
@@ -559,7 +536,6 @@ main {
     box-shadow: 0 0 0 4px var(--accent);
 }
 
-/* 8. Magazine Layout - Editorial Style */
 .layout-magazine {
     display: grid !important;
     grid-template-columns: 2fr 1fr 1fr;
@@ -608,7 +584,6 @@ main {
     padding: 15px;
 }
 
-/* 9. Zigzag Layout - Alternating Left/Right Pattern */
 .layout-zigzag {
     display: block !important;
     max-width: 1200px;
@@ -654,7 +629,6 @@ main {
     color: var(--gray);
 }
 
-/* 10. Focus Layout - Single Featured with Thumbnails */
 .layout-focus {
     display: block !important;
     max-width: 1200px;
@@ -722,22 +696,20 @@ main {
     overflow: hidden;
 }
 
-/* --- Card Styles (Skins) --- */
-
-/* Standard (FIFA Style) */
+/* Card Styles */
 .card-style-standard {
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 20px var(--shadow);
 }
 
-/* Star Style - Dark & Glow */
 .card-style-star {
-    background: #0d1025;
+    background: #1a237e;
     border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.15);
     overflow: hidden;
 }
+
 .card-style-star .news-image-wrapper {
     position: relative;
     height: 180px;
@@ -746,6 +718,7 @@ main {
     margin: 0;
     padding: 0;
 }
+
 .card-style-star .news-image-wrapper img {
     position: absolute;
     top: 0;
@@ -756,19 +729,23 @@ main {
     object-position: center center;
     display: block;
 }
+
 .card-style-star .news-title {
     color: white;
     font-family: serif;
     font-style: italic;
     letter-spacing: 0.5px;
 }
+
 .card-style-star:hover {
-    border-color: #D4AF37;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    border-color: #FFD740;
+    box-shadow: 0 0 30px rgba(255,215,64,0.3);
 }
+
 .card-style-star:hover .news-image-wrapper img {
     transform: none;
 }
+
 .card-style-star .news-date-badge {
     position: absolute !important;
     top: auto !important;
@@ -779,7 +756,7 @@ main {
     display: inline-flex !important;
     align-items: center;
     gap: 4px;
-    color: #D4AF37;
+    color: #FFD740;
     border-radius: 12px;
     padding: 5px 10px;
     font-weight: 600;
@@ -791,7 +768,6 @@ main {
     height: auto;
 }
 
-/* Comic Style - Hardcore Comic Design */
 .card-style-comic {
     background: #fff;
     border: 4px solid #000;
@@ -799,10 +775,12 @@ main {
     box-shadow: 6px 6px 0px #000;
     position: relative;
 }
+
 .card-style-comic:hover {
     transform: scale(1.05) rotate(-1.5deg);
     box-shadow: 10px 10px 0px #000;
 }
+
 .card-style-comic .news-title {
     font-weight: 900;
     text-transform: uppercase;
@@ -810,11 +788,12 @@ main {
     color: #000;
     line-height: 1.3;
 }
+
 .card-style-comic .news-image-wrapper {
     border-bottom: 4px solid #000;
-    background: #FDDA24; /* CPL Yellow Background */
+    background: #FDDA24;
 }
-/* Triangular Corner Accent */
+
 .card-style-comic .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -824,9 +803,10 @@ main {
     height: 0;
     border-style: solid;
     border-width: 0 40px 40px 0;
-    border-color: transparent #EF3340 transparent transparent; /* Belgian Red */
+    border-color: transparent #EF3340 transparent transparent;
     z-index: 6;
 }
+
 .card-style-comic .news-date-badge {
     top: auto;
     bottom: 12px;
@@ -841,6 +821,7 @@ main {
     box-shadow: none;
     transform: none;
 }
+
 .card-style-comic .news-summary {
     color: #333;
     font-weight: 600;
@@ -849,17 +830,17 @@ main {
     display: block;
 }
 
-/* Cartoon Style - Playful & Soft */
 .card-style-cartoon {
     background: #fff;
     border-radius: 30px;
     border: 4px solid #f0f0f0;
     box-shadow: 0 10px 0px #eee;
 }
+
 .card-style-cartoon .news-date-badge {
     top: 20px;
     left: -10px;
-    background: #FF4081;
+    background: #3F51B5;
     color: #fff;
     border-radius: 20px;
     padding: 6px 15px;
@@ -867,7 +848,6 @@ main {
     box-shadow: 0 4px 0px rgba(0,0,0,0.1);
 }
 
-/* Ocean Style - Pixel-Perfect Ocean Design */
 .card-style-ocean {
     background: #fff;
     border-radius: 20px;
@@ -876,7 +856,6 @@ main {
     transition: transform 0.4s;
 }
 
-/* Three-Color Accent Logic - 5px border bottom */
 .card-style-ocean.ocean-blue { border-bottom: 5px solid #0077BE; }
 .card-style-ocean.ocean-teal { border-bottom: 5px solid #20B2AA; }
 .card-style-ocean.ocean-orange { border-bottom: 5px solid #FF8C00; }
@@ -885,7 +864,6 @@ main {
     transform: translateY(-5px);
 }
 
-/* Image Container with Wave Overlay via ::before */
 .card-style-ocean .news-image-wrapper {
     position: relative;
     height: 180px;
@@ -895,7 +873,6 @@ main {
     padding: 0;
 }
 
-/* Semi-transparent wave overlay on image */
 .card-style-ocean .news-image-wrapper::before {
     content: '';
     position: absolute;
@@ -920,7 +897,6 @@ main {
     display: block;
 }
 
-/* Hide ocean-wave div - replaced with ::before pseudo-element */
 .card-style-ocean .ocean-wave {
     display: none;
 }
@@ -937,7 +913,6 @@ main {
     overflow: hidden;
 }
 
-/* Date badge positioned absolutely at bottom left of image */
 .card-style-ocean .news-date-badge {
     position: absolute !important;
     bottom: 10px;
@@ -959,11 +934,13 @@ main {
     width: auto;
     height: auto;
 }
+
 .card-style-ocean .news-date-badge svg {
     width: 11px !important;
     height: 11px !important;
     flex-shrink: 0;
 }
+
 .card-style-ocean.ocean-blue .news-date-badge { background: #0077BE; }
 .card-style-ocean.ocean-teal .news-date-badge { background: #20B2AA; }
 .card-style-ocean.ocean-orange .news-date-badge { background: #FF8C00; }
@@ -979,22 +956,17 @@ main {
     display: none;
 }
 
-/* Show summary in waterfall layout */
 .layout-waterfall .card-style-ocean .news-summary {
     display: block;
 }
 
-/* ============================================
-   Universal Card Styles
-   ============================================ */
-
-/* Gradient Style - Top Accent Bar Animation */
 .card-style-gradient {
     background: #fff;
     border-radius: 24px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     position: relative;
 }
+
 .card-style-gradient::before {
     content: '';
     position: absolute;
@@ -1002,39 +974,44 @@ main {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #FF6B9D, #C44BFF, #6B9BFF);
+    background: linear-gradient(90deg, #3F51B5, #5C6BC0, #7986CB);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
+
 .card-style-gradient:hover::before {
     transform: scaleX(1);
 }
+
 .card-style-gradient .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 16px;
 }
+
 .card-style-gradient:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
-/* Glass Style - Glass Morphism with Gradient Background */
 .card-style-glass {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(51, 65, 85, 0.95));
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.95), rgba(63, 81, 181, 0.95));
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
+
 .card-style-glass .news-image-wrapper {
     aspect-ratio: 16/10;
 }
+
 .card-style-glass .news-title {
     color: #fff;
     text-transform: none;
     font-weight: 700;
     letter-spacing: 0.3px;
 }
+
 .card-style-glass .news-date-badge {
     top: 0;
     right: 0;
@@ -1045,79 +1022,86 @@ main {
     font-weight: 600;
     backdrop-filter: blur(5px);
 }
+
 .card-style-glass:hover {
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
 }
 
-/* Diagonal Style - Modern Diagonal Design */
 .card-style-diagonal {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(117,170,219,0.15);
+    box-shadow: 0 8px 25px rgba(63,81,181,0.15);
     position: relative;
     overflow: hidden;
 }
+
 .card-style-diagonal .news-image-wrapper {
     aspect-ratio: 16/10;
 }
+
 .card-style-diagonal .news-title {
     color: #1A1A1A;
     font-weight: 700;
 }
+
 .card-style-diagonal .news-date-badge {
-    background: #75AADB;
+    background: #3F51B5;
     color: #fff;
     border-radius: 20px;
     padding: 6px 16px;
 }
 
-/* Orbit Style - Circular Design */
 .card-style-orbit {
-    background: #0A0A1A;
+    background: #0D1540;
     border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,51,160,0.5);
+    box-shadow: 0 0 20px rgba(63,81,181,0.5);
 }
+
 .card-style-orbit .news-image-wrapper {
     aspect-ratio: 1/1;
     border-radius: 50%;
-    border: 4px solid #0033A0;
+    border: 4px solid #3F51B5;
 }
+
 .card-style-orbit .news-title {
     color: #fff;
 }
+
 .card-style-orbit .news-date-badge {
-    background: #DA291C;
-    color: #fff;
+    background: #FFD740;
+    color: #000;
 }
 
-/* Gallery Style - Frame Design */
 .card-style-gallery {
-    background: #F4F5F0;
+    background: #E8EAF6;
     border-radius: 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border: 2px solid #D4AF37;
+    border: 2px solid #3F51B5;
     padding: 15px;
 }
+
 .card-style-gallery .news-image-wrapper {
-    border: 1px solid #D4AF37;
+    border: 1px solid #3F51B5;
 }
+
 .card-style-gallery .news-title {
     color: #1A1A1A;
     font-weight: 700;
 }
+
 .card-style-gallery .news-date-badge {
-    background: #008751;
+    background: #3F51B5;
     color: #fff;
 }
 
-/* Strip Style - 2-Row Grid Layout */
 .card-style-strip {
     background: #F8FAFC;
     border-radius: 8px;
     border: 1px solid #E5E7EB;
 }
+
 .layout-grid .card-style-strip .news-link {
     display: grid;
     grid-template-areas:
@@ -1129,7 +1113,7 @@ main {
     gap: 8px;
     height: 150px;
 }
-/* Image styling - top left */
+
 .layout-grid .card-style-strip .news-image-wrapper {
     grid-area: image;
     width: 70px;
@@ -1140,10 +1124,11 @@ main {
     background: #E5E7EB;
     position: relative;
 }
+
 .layout-grid .card-style-strip .news-image-wrapper .news-date-badge {
     display: none;
 }
-/* Info area with title and date - top right */
+
 .layout-grid .card-style-strip .news-info {
     grid-area: info;
     padding: 0;
@@ -1151,6 +1136,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .layout-grid .card-style-strip .news-title {
     color: #1A1A2E;
     font-weight: 600;
@@ -1163,7 +1149,7 @@ main {
     overflow: hidden;
     max-height: 40px;
 }
-/* Date text displayed as plain text below title */
+
 .layout-grid .card-style-strip .news-info::after {
     content: attr(data-date);
     display: block;
@@ -1171,11 +1157,11 @@ main {
     font-size: 0.7rem;
     margin-top: auto;
 }
-/* Hide the styled date badge in news-info */
+
 .layout-grid .card-style-strip .news-info .news-date-badge {
     display: none !important;
 }
-/* Summary - second row full width */
+
 .layout-grid .card-style-strip .news-summary {
     grid-area: summary;
     display: block !important;
@@ -1190,7 +1176,7 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-/* Handle content in paragraph after news-summary */
+
 .layout-grid .card-style-strip .news-summary:empty + p {
     grid-area: summary;
     display: block !important;
@@ -1205,30 +1191,27 @@ main {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
 .layout-grid .card-style-strip .news-summary:empty {
     display: none;
 }
 
-/* Confetti Style - Colorful Top Border */
 .card-style-confetti {
     background:
-        /* Confetti pattern overlay */
-        radial-gradient(circle at 15% 20%, var(--confetti-1, rgba(255, 217, 61, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 85% 30%, var(--confetti-2, rgba(0, 217, 255, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 75% 80%, var(--confetti-3, rgba(255, 107, 107, 0.08)) 0%, transparent 50%),
-        radial-gradient(circle at 25% 70%, var(--confetti-1, rgba(255, 217, 61, 0.06)) 0%, transparent 40%),
-        radial-gradient(circle at 65% 55%, var(--confetti-2, rgba(0, 217, 255, 0.06)) 0%, transparent 45%),
-        radial-gradient(circle at 35% 40%, var(--confetti-3, rgba(255, 107, 107, 0.06)) 0%, transparent 35%),
-        /* Small scattered dots */
-        radial-gradient(circle at 12% 15%, var(--confetti-1, rgba(255, 217, 61, 0.15)) 1px, transparent 1px),
-        radial-gradient(circle at 88% 12%, var(--confetti-2, rgba(0, 217, 255, 0.15)) 2px, transparent 2px),
-        radial-gradient(circle at 92% 85%, var(--confetti-3, rgba(255, 107, 107, 0.15)) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 8% 82%, var(--confetti-1, rgba(255, 217, 61, 0.12)) 2px, transparent 2px),
-        radial-gradient(circle at 45% 8%, var(--confetti-2, rgba(0, 217, 255, 0.12)) 1px, transparent 1px),
-        radial-gradient(circle at 78% 65%, var(--confetti-3, rgba(255, 107, 107, 0.12)) 1.5px, transparent 1.5px),
-        radial-gradient(circle at 22% 48%, var(--confetti-1, rgba(255, 217, 61, 0.1)) 1px, transparent 1px),
-        radial-gradient(circle at 58% 92%, var(--confetti-2, rgba(0, 217, 255, 0.1)) 2px, transparent 2px),
-        /* Base white background */
+        radial-gradient(circle at 15% 20%, var(--confetti-1, rgba(63, 81, 181, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, var(--confetti-2, rgba(92, 107, 192, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 75% 80%, var(--confetti-3, rgba(121, 134, 203, 0.08)) 0%, transparent 50%),
+        radial-gradient(circle at 25% 70%, var(--confetti-1, rgba(63, 81, 181, 0.06)) 0%, transparent 40%),
+        radial-gradient(circle at 65% 55%, var(--confetti-2, rgba(92, 107, 192, 0.06)) 0%, transparent 45%),
+        radial-gradient(circle at 35% 40%, var(--confetti-3, rgba(121, 134, 203, 0.06)) 0%, transparent 35%),
+        radial-gradient(circle at 12% 15%, var(--confetti-1, rgba(63, 81, 181, 0.15)) 1px, transparent 1px),
+        radial-gradient(circle at 88% 12%, var(--confetti-2, rgba(92, 107, 192, 0.15)) 2px, transparent 2px),
+        radial-gradient(circle at 92% 85%, var(--confetti-3, rgba(121, 134, 203, 0.15)) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 8% 82%, var(--confetti-1, rgba(63, 81, 181, 0.12)) 2px, transparent 2px),
+        radial-gradient(circle at 45% 8%, var(--confetti-2, rgba(92, 107, 192, 0.12)) 1px, transparent 1px),
+        radial-gradient(circle at 78% 65%, var(--confetti-3, rgba(121, 134, 203, 0.12)) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 22% 48%, var(--confetti-1, rgba(63, 81, 181, 0.1)) 1px, transparent 1px),
+        radial-gradient(circle at 58% 92%, var(--confetti-2, rgba(92, 107, 192, 0.1)) 2px, transparent 2px),
         #fff;
     background-blend-mode: normal;
     border-radius: 20px;
@@ -1237,119 +1220,122 @@ main {
     position: relative;
     overflow: hidden;
 }
-/* Yellow variant */
+
 .card-style-confetti:nth-child(3n+1) {
-    border-top-color: #FFD93D;
-    --confetti-1: rgba(255, 217, 61, 1);
-    --confetti-2: rgba(0, 217, 255, 1);
-    --confetti-3: rgba(255, 107, 107, 1);
+    border-top-color: #3F51B5;
+    --confetti-1: rgba(63, 81, 181, 1);
+    --confetti-2: rgba(92, 107, 192, 1);
+    --confetti-3: rgba(121, 134, 203, 1);
     --icon-1: '✦';
     --icon-2: '◆';
     --icon-3: '★';
 }
-/* Cyan variant */
+
 .card-style-confetti:nth-child(3n+2) {
-    border-top-color: #00D9FF;
-    --confetti-1: rgba(0, 217, 255, 1);
-    --confetti-2: rgba(255, 107, 107, 1);
-    --confetti-3: rgba(255, 217, 61, 1);
+    border-top-color: #5C6BC0;
+    --confetti-1: rgba(92, 107, 192, 1);
+    --confetti-2: rgba(121, 134, 203, 1);
+    --confetti-3: rgba(63, 81, 181, 1);
     --icon-1: '◆';
     --icon-2: '★';
     --icon-3: '✦';
 }
-/* Red variant */
+
 .card-style-confetti:nth-child(3n+3) {
-    border-top-color: #FF6B6B;
-    --confetti-1: rgba(255, 107, 107, 1);
-    --confetti-2: rgba(255, 217, 61, 1);
-    --confetti-3: rgba(0, 217, 255, 1);
+    border-top-color: #7986CB;
+    --confetti-1: rgba(121, 134, 203, 1);
+    --confetti-2: rgba(63, 81, 181, 1);
+    --confetti-3: rgba(92, 107, 192, 1);
     --icon-1: '★';
     --icon-2: '✦';
     --icon-3: '◆';
 }
+
 .card-style-confetti .news-image-wrapper {
     height: 180px;
 }
-/* Card background decoration - right side icons */
+
 .card-style-confetti::before {
     content: var(--icon-1, '✦');
     position: absolute;
     top: 25%;
     right: 6%;
     font-size: 32px;
-    color: var(--confetti-1, rgba(255, 217, 61, 0.2));
+    color: var(--confetti-1, rgba(63, 81, 181, 0.2));
     z-index: 1;
     pointer-events: none;
 }
+
 .card-style-confetti::after {
     content: var(--icon-2, '◆');
     position: absolute;
     bottom: 35%;
     right: 12%;
     font-size: 24px;
-    color: var(--confetti-2, rgba(0, 217, 255, 0.2));
+    color: var(--confetti-2, rgba(92, 107, 192, 0.2));
     z-index: 1;
     pointer-events: none;
 }
-/* Third icon decoration */
+
 .card-style-confetti .news-link::before {
     content: var(--icon-3, '★');
     position: absolute;
     top: 55%;
     right: 3%;
     font-size: 20px;
-    color: var(--confetti-3, rgba(255, 107, 107, 0.2));
+    color: var(--confetti-3, rgba(121, 134, 203, 0.2));
     z-index: 1;
     pointer-events: none;
 }
+
 .card-style-confetti:hover {
     transform: translateY(-8px) rotate(1deg);
 }
+
 .card-style-confetti:hover::before {
     transform: scale(1.1) rotate(15deg);
     transition: transform 0.3s ease;
 }
+
 .card-style-confetti:hover::after {
     transform: scale(1.05) rotate(-10deg);
     transition: transform 0.3s ease;
 }
 
-/* Crystal Style - Geometric Watermark */
 .card-style-crystal {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     position: relative;
 }
+
 .card-style-crystal::after {
     content: '◆';
     position: absolute;
     bottom: 10px;
     right: 15px;
     font-size: 40px;
-    color: rgba(17, 69, 126, 0.1);
+    color: rgba(63, 81, 181, 0.1);
 }
+
 .card-style-crystal .news-title {
-    color: #11457E;
+    color: #3F51B5;
     font-weight: 700;
 }
+
 .card-style-crystal .news-date-badge {
-    background: #11457E;
+    background: #3F51B5;
     color: #fff;
 }
 
-/* ============================================
-   Additional Universal Card Styles
-   ============================================ */
-
-/* Neon Style - Glowing Neon Effect */
 .card-style-neon {
     background: #0a0a0a;
     border-radius: 12px;
-    border: 2px solid #00ff88;
-    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, inset 0 0 10px rgba(0, 255, 136, 0.1);
+    border: 2px solid #3F51B5;
+    box-shadow: 0 0 10px #3F51B5, 0 0 20px #3F51B5, inset 0 0 10px rgba(63, 81, 181, 0.1);
     position: relative;
 }
+
 .card-style-neon::before {
     content: '';
     position: absolute;
@@ -1357,7 +1343,7 @@ main {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, #00ff88, #00d4ff, #ff00ff, #00ff88);
+    background: linear-gradient(45deg, #3F51B5, #5C6BC0, #7986CB, #3F51B5);
     background-size: 400% 400%;
     border-radius: 12px;
     z-index: -1;
@@ -1365,35 +1351,30 @@ main {
     filter: blur(8px);
     opacity: 0.7;
 }
+
 @keyframes neonGlow {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
 .card-style-neon:hover {
-    box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, inset 0 0 20px rgba(0, 255, 136, 0.2);
-}
-.card-style-neon .news-title {
-    color: #00ff88;
-    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
-    font-weight: 700;
-}
-.card-style-neon .news-info {
-    background: transparent;
-}
-.card-style-neon .news-summary {
-    color: #00ff88;
-    opacity: 0.85;
-    background: transparent;
-}
-.card-style-neon .news-date-badge {
-    background: transparent;
-    border: 2px solid #00d4ff;
-    color: #00d4ff;
-    text-shadow: 0 0 5px #00d4ff;
-    box-shadow: 0 0 10px #00d4ff, inset 0 0 10px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px #3F51B5, 0 0 40px #3F51B5, inset 0 0 20px rgba(63, 81, 181, 0.2);
 }
 
-/* Polaroid Style - Instant Photo Design */
+.card-style-neon .news-title {
+    color: #3F51B5;
+    text-shadow: 0 0 10px #3F51B5, 0 0 20px #3F51B5;
+    font-weight: 700;
+}
+
+.card-style-neon .news-date-badge {
+    background: transparent;
+    border: 2px solid #5C6BC0;
+    color: #5C6BC0;
+    text-shadow: 0 0 5px #5C6BC0;
+    box-shadow: 0 0 10px #5C6BC0, inset 0 0 10px rgba(92, 107, 192, 0.2);
+}
+
 .card-style-polaroid {
     background: #fff;
     border-radius: 2px;
@@ -1403,19 +1384,23 @@ main {
     transform: rotate(-1deg);
     transition: transform 0.3s ease;
 }
+
 .card-style-polaroid:nth-child(even) {
     transform: rotate(1deg);
 }
+
 .card-style-polaroid:hover {
     transform: rotate(0deg) scale(1.02);
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
+
 .card-style-polaroid .news-image-wrapper {
     aspect-ratio: 16/10;
     background: #f5f5f5;
     border-radius: 2px;
     filter: saturate(1.1) contrast(1.05);
 }
+
 .card-style-polaroid .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -1426,6 +1411,7 @@ main {
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
     pointer-events: none;
 }
+
 .card-style-polaroid .news-title {
     color: #333;
     font-family: 'Courier New', monospace;
@@ -1434,11 +1420,12 @@ main {
     padding: 15px 5px 0 5px;
     line-height: 1.5;
 }
+
 .card-style-polaroid .news-date-badge {
     top: 20px;
     left: 20px;
     background: rgba(255,255,255,0.9);
-    color: #c41e3a;
+    color: #3F51B5;
     font-family: 'Courier New', monospace;
     font-size: 0.7rem;
     font-weight: 700;
@@ -1446,7 +1433,6 @@ main {
     border-radius: 2px;
 }
 
-/* Minimal Style - Ultra Minimalist */
 .card-style-minimal {
     background: #fafafa;
     border: 1px solid #e0e0e0;
@@ -1454,24 +1440,29 @@ main {
     box-shadow: none;
     transition: all 0.3s ease;
 }
+
 .card-style-minimal:hover {
     border-color: #333;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
 .card-style-minimal .news-image-wrapper {
     aspect-ratio: 16/10;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
+
 .card-style-minimal:hover .news-image-wrapper {
     filter: grayscale(0%);
 }
+
 .card-style-minimal .news-title {
     color: #333;
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: -0.02em;
 }
+
 .card-style-minimal .news-date-badge {
     top: 15px;
     left: 15px;
@@ -1484,15 +1475,15 @@ main {
     letter-spacing: 0.05em;
 }
 
-/* Brutal Style - Neo-Brutalism Bold */
 .card-style-brutal {
-    background: #FFE500;
+    background: #3F51B5;
     border: 4px solid #000;
     border-radius: 0;
     box-shadow: 8px 8px 0px #000;
     position: relative;
     transition: all 0.2s ease;
 }
+
 .card-style-brutal::after {
     content: '★';
     position: absolute;
@@ -1501,25 +1492,29 @@ main {
     font-size: 24px;
     color: #000;
 }
+
 .card-style-brutal:hover {
     transform: translate(-4px, -4px);
     box-shadow: 12px 12px 0px #000;
 }
+
 .card-style-brutal .news-image-wrapper {
     aspect-ratio: 16/10;
     border-bottom: 4px solid #000;
     filter: contrast(1.2) saturate(1.3);
 }
+
 .card-style-brutal .news-title {
-    color: #000;
+    color: #fff;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: -0.02em;
 }
+
 .card-style-brutal .news-date-badge {
     background: #000;
-    color: #FFE500;
+    color: #3F51B5;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 0.7rem;
@@ -1527,44 +1522,47 @@ main {
     border-radius: 0;
 }
 
-/* Soft Style - Soft UI Design */
 .card-style-soft {
-    background: linear-gradient(145deg, #f0f0f0, #ffffff);
+    background: linear-gradient(145deg, #E8EAF6, #ffffff);
     border-radius: 30px;
-    box-shadow: 20px 20px 60px #d1d1d1, -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #c5c9d9, -20px -20px 60px #ffffff;
     border: none;
 }
+
 .card-style-soft:hover {
-    box-shadow: 25px 25px 70px #d1d1d1, -25px -25px 70px #ffffff;
+    box-shadow: 25px 25px 70px #c5c9d9, -25px -25px 70px #ffffff;
 }
+
 .card-style-soft .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 20px;
     margin: 15px;
     box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1), inset -5px -5px 15px rgba(255,255,255,0.7);
 }
+
 .card-style-soft .news-title {
-    color: #555;
+    color: #3949AB;
     font-weight: 600;
     padding: 0 20px;
 }
+
 .card-style-soft .news-date-badge {
-    background: linear-gradient(145deg, #e0e0e0, #ffffff);
-    color: #666;
+    background: linear-gradient(145deg, #d0d4e0, #ffffff);
+    color: #3F51B5;
     border-radius: 15px;
     padding: 8px 16px;
     font-weight: 600;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px rgba(255,255,255,0.7);
 }
 
-/* Glitch Style - Cyberpunk Glitch Effect */
 .card-style-glitch {
-    background: #1a1a2e;
+    background: #1A237E;
     border-radius: 8px;
-    border: 2px solid #ff00ff;
+    border: 2px solid #3F51B5;
     position: relative;
     overflow: hidden;
 }
+
 .card-style-glitch::before {
     content: '';
     position: absolute;
@@ -1572,16 +1570,19 @@ main {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,0,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(63,81,181,0.3), transparent);
     animation: glitchScan 3s infinite;
 }
+
 @keyframes glitchScan {
     0% { left: -100%; }
     50%, 100% { left: 100%; }
 }
+
 .card-style-glitch:hover {
     animation: glitchShake 0.3s ease;
 }
+
 @keyframes glitchShake {
     0%, 100% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
@@ -1589,49 +1590,55 @@ main {
     60% { transform: translate(2px, 2px); }
     80% { transform: translate(2px, -2px); }
 }
+
 .card-style-glitch .news-image-wrapper {
     aspect-ratio: 16/10;
     filter: hue-rotate(90deg) contrast(1.2);
 }
+
 .card-style-glitch .news-title {
-    color: #00ffff;
+    color: #FFD740;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+    text-shadow: 2px 0 #3F51B5, -2px 0 #5C6BC0;
 }
+
 .card-style-glitch .news-date-badge {
-    background: #ff00ff;
-    color: #000;
+    background: #3F51B5;
+    color: #fff;
     font-weight: 900;
     text-transform: uppercase;
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 }
 
-/* Holographic Style - Rainbow Holographic */
 .card-style-holographic {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background: linear-gradient(135deg, #3F51B5 0%, #5C6BC0 25%, #7986CB 50%, #9FA8DA 75%, #3F51B5 100%);
     background-size: 400% 400%;
     border-radius: 20px;
     padding: 3px;
     animation: holographicShift 8s ease infinite;
 }
+
 @keyframes holographicShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
 }
+
 .card-style-holographic .news-card-inner {
     background: rgba(255,255,255,0.95);
     border-radius: 17px;
     padding: 16px;
     height: 100%;
 }
+
 .card-style-holographic .news-image-wrapper {
     aspect-ratio: 16/10;
     border-radius: 12px;
     position: relative;
     overflow: hidden;
 }
+
 .card-style-holographic .news-image-wrapper::after {
     content: '';
     position: absolute;
@@ -1642,25 +1649,26 @@ main {
     background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
     animation: holographicShine 3s infinite;
 }
+
 @keyframes holographicShine {
     0% { transform: translateX(-100%) rotate(45deg); }
     100% { transform: translateX(100%) rotate(45deg); }
 }
+
 .card-style-holographic .news-title {
-    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+    background: linear-gradient(135deg, #3F51B5, #5C6BC0, #7986CB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 700;
 }
+
 .card-style-holographic .news-date-badge {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #3F51B5, #5C6BC0);
     color: #fff;
     border-radius: 20px;
     font-weight: 700;
 }
-
-/* --- End of Card Styles --- */
 
 .news-card {
     overflow: hidden;
@@ -1696,7 +1704,7 @@ main {
     left: 0;
     right: 0;
     height: 50%;
-    background: linear-gradient(to top, rgba(0,48,135,0.9) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(26,35,126,0.9) 0%, transparent 100%);
 }
 
 .news-category {
@@ -1835,7 +1843,7 @@ main {
 .btn-view-all:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 166, 81, 0.4);
+    box-shadow: 0 8px 25px rgba(63, 81, 181, 0.4);
 }
 
 /* Empty State */
@@ -2164,12 +2172,6 @@ footer {
         gap: 15px;
     }
 
-    /* Waterfall Layout Mobile - single column */
-    .layout-waterfall {
-        column-count: 1 !important;
-    }
-
-    /* List Layout Mobile */
     .layout-list .news-link {
         flex-direction: column;
         gap: 15px;
@@ -2190,7 +2192,6 @@ footer {
         justify-content: center;
     }
 
-    /* Zigzag Layout Mobile */
     .layout-zigzag .news-card,
     .layout-zigzag .news-card:nth-child(even) {
         flex-direction: column;
@@ -2210,7 +2211,6 @@ footer {
         font-size: 1.1rem;
     }
 
-    /* Bento Layout Mobile */
     .layout-bento {
         grid-template-columns: 1fr;
         grid-auto-rows: 250px;
@@ -2238,12 +2238,10 @@ footer {
         width: 100%;
     }
 
-    /* Timeline Layout Mobile */
     .layout-timeline {
         padding-left: 40px;
     }
 
-    /* Magazine Layout Mobile */
     .layout-magazine {
         grid-template-columns: 1fr;
     }
@@ -2263,7 +2261,6 @@ footer {
         width: 100%;
     }
 
-    /* Focus Layout Mobile */
     .layout-focus .news-card:first-child .news-link {
         flex-direction: column;
         height: auto;
@@ -2302,19 +2299,6 @@ footer {
         font-size: 0.85rem;
     }
 
-    /* Ensure neon card text color on mobile */
-    .card-style-neon .news-title {
-        color: #00ff88 !important;
-        text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88 !important;
-    }
-
-    /* Ensure neon card summary text color on mobile - waterfall layout */
-    .layout-waterfall .card-style-neon .news-summary {
-        display: block !important;
-        color: #00ff88 !important;
-        opacity: 0.85 !important;
-    }
-
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -2338,14 +2322,12 @@ footer {
     }
 }
 
-/* Hide pagination on mobile, use infinite scroll instead */
 @media (max-width: 768px) {
     .pagination {
         display: none;
     }
 }
 
-/* Infinite scroll loading indicator */
 .infinite-scroll-loading {
     display: none;
     text-align: center;
@@ -2389,55 +2371,7 @@ footer {
     display: block;
 }
 
-/* ========================================
-   ORANGE THEME UNIQUE LAYOUT
-   ======================================== */
-
-/* Orange: 斜角卡片布局 */
-body.theme-orange .news-grid {
-    display: grid;
-    gap: 20px;
-    transform: skewY(-2deg);
-    margin: 20px 0;
-}
-
-body.theme-orange .news-card {
-    transform: skewY(2deg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.theme-orange .news-card:hover {
-    transform: skewY(2deg) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
-}
-
-body.theme-orange .hero-section {
-    transform: skewY(-2deg);
-    margin-bottom: 30px;
-}
-
-body.theme-orange .hero-content {
-    transform: skewY(2deg);
-}
-
-@media (max-width: 768px) {
-    body.theme-orange .news-grid,
-    body.theme-orange .hero-section {
-        transform: none;
-    }
-    body.theme-orange .news-card {
-        transform: none;
-    }
-    body.theme-orange .news-card:hover {
-        transform: translateY(-5px);
-    }
-}
-
-
-/* ========================================
-   TAXONOMY PAGES (Categories, Tags)
-   ======================================== */
-
+/* Taxonomy Pages */
 .taxonomy-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -2492,13 +2426,325 @@ body.theme-orange .hero-content {
     font-weight: 500;
 }
 
-.count-number {
-    font-weight: 700;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
     .taxonomy-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   INDIGO THEME UNIQUE LAYOUT
+   ======================================== */
+
+/* Indigo: 优雅深邃星空布局 */
+body.theme-indigo .news-grid {
+    display: grid;
+    gap: 30px;
+    padding: 25px 0;
+}
+
+body.theme-indigo .news-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(63, 81, 181, 0.15);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(180deg, #ffffff 0%, #F5F3FF 100%);
+    position: relative;
+}
+
+body.theme-indigo .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3F51B5, #7986CB, #3F51B5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+body.theme-indigo .news-card:hover::before {
+    opacity: 1;
+}
+
+body.theme-indigo .news-card:hover {
+    box-shadow: 0 20px 60px rgba(63, 81, 181, 0.3);
+    transform: translateY(-12px);
+}
+
+body.theme-indigo .news-card .news-image-wrapper {
+    border-radius: 14px 14px 0 0;
+    margin: 12px 12px 0;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(63, 81, 181, 0.12);
+}
+
+body.theme-indigo .news-card .news-info {
+    padding: 8px 20px 20px;
+}
+
+body.theme-indigo .news-card .news-title {
+    font-weight: 700;
+    color: #1A237E;
+    letter-spacing: 0.3px;
+    font-size: 1.15rem;
+}
+
+body.theme-indigo .news-card .news-date-badge {
+    background: linear-gradient(135deg, #3F51B5, #5C6BC0);
+    color: white;
+    border-radius: 8px 8px 20px 20px;
+    padding: 8px 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(63, 81, 181, 0.3);
+}
+
+/* Indigo 独特 Logo 样式 - 星空钻石 */
+body.theme-indigo .logo-trophy {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3F51B5, #1A237E);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.2), 0 8px 30px rgba(63, 81, 181, 0.4);
+    position: relative;
+    animation: diamondFloat 4s ease-in-out infinite;
+}
+
+body.theme-indigo .logo-trophy::before {
+    content: '✦';
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 1.2rem;
+    color: #7986CB;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+body.theme-indigo .logo-trophy::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes diamondFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes borderGlow {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.2), 0 8px 30px rgba(63, 81, 181, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(121, 134, 203, 0.4), 0 12px 40px rgba(63, 81, 181, 0.6); }
+}
+
+body.theme-indigo .logo-text-main {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    background: linear-gradient(135deg, #3F51B5, #7986CB, #5C6BC0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.theme-indigo .logo-text-sub {
+    font-size: 0.7rem;
+    color: #7986CB;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+/* Indigo 独特 Hero 样式 - 星空梦境 */
+body.theme-indigo .hero-section {
+    position: relative;
+    padding: 75px 45px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba(121, 134, 203, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(92, 107, 192, 0.3) 0%, transparent 50%),
+        linear-gradient(180deg, #3F51B5 0%, #1A237E 50%, #000051 100%);
+    box-shadow: 0 15px 50px rgba(26, 35, 126, 0.4);
+}
+
+body.theme-indigo .hero-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 1px, transparent 1px),
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,0.05) 2px, transparent 2px),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle at 90% 40%, rgba(255,255,255,0.06) 2px, transparent 2px);
+    background-size: 100% 100%;
+    animation: starTwinkle2 8s ease-in-out infinite;
+}
+
+@keyframes starTwinkle2 {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+body.theme-indigo .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+body.theme-indigo .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #7986CB, #5C6BC0);
+    color: white;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(121, 134, 203, 0.4);
+    text-transform: uppercase;
+}
+
+body.theme-indigo .hero-title {
+    font-size: 3.3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 20px rgba(121, 134, 203, 0.5);
+}
+
+body.theme-indigo .hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 30px;
+    max-width: 600px;
+    font-weight: 500;
+}
+
+body.theme-indigo .team-tag {
+    background: rgba(121, 134, 203, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(121, 134, 203, 0.4);
+    color: #E8EAF6;
+}
+
+body.theme-indigo .site-header {
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 8px 40px rgba(26, 35, 126, 0.25);
+}
+
+body.theme-indigo .hero-section {
+    border-radius: 20px;
+    background: linear-gradient(135deg, #3F51B5 0%, #1A237E 100%);
+    box-shadow: inset 0 0 80px rgba(26, 35, 126, 0.3);
+}
+
+body.theme-indigo .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(121, 134, 203, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(92, 107, 192, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    body.theme-indigo .news-card {
+        border-radius: 12px;
+    }
+
+    body.theme-indigo .news-card .news-image-wrapper {
+        border-radius: 10px 10px 0 0;
+        margin: 8px 8px 0;
+    }
+
+    body.theme-indigo .hero-section {
+        padding: 50px 25px;
+    }
+
+    body.theme-indigo .hero-title {
+        font-size: 2rem;
+    }
+
+    body.theme-indigo .logo-trophy {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
+    }
+}
+
+/* ========================================
+   INDIGO THEME - UNIQUE CONTENT LAYOUT
+   ======================================== */
+
+/* Indigo: 竖向堆叠布局 - Logo元素竖排，Hero隐藏badge */
+body.theme-indigo .logo {
+    flex-direction: column;
+    gap: 10px;
+}
+
+body.theme-indigo .logo-text {
+    text-align: center;
+}
+
+body.theme-indigo .logo-text-sub {
+    order: -1;
+}
+
+body.theme-indigo .hero-badge {
+    display: none;
+}
+
+body.theme-indigo .hero-content {
+    padding-left: 40px;
+}
+
+body.theme-indigo .hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+body.theme-indigo .hero-subtitle {
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    body.theme-indigo .hero-content {
+        padding-left: 0;
+    }
+
+    body.theme-indigo .logo {
+        flex-direction: row;
+        gap: 15px;
     }
 }
