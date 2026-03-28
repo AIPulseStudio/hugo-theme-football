@@ -27,10 +27,10 @@ subtitle = 'Cập nhật tin tức mới nhất'
 #         "yellow"(黄色), "indigo"(靛蓝), "violet"(紫罗兰), "cyan"(青色),
 #         "lime"(青柠), "amber"(琥珀色), "rose"(玫瑰红), "emerald"(祖母绿),
 #         "slate"(石板灰), "brown"(棕色)
-color = 'amber'
+color = 'indigo'
 # 可选值: "grid", "featured", "compact", "list", "waterfall",
 #         "bento", "timeline", "magazine", "zigzag", "focus"
-layout = 'waterfall'
+layout = 'featured'
 # 可选值: "standard", "comic", "star", "cartoon", "ocean", 
 #         "gradient", "glass", "diagonal", "orbit", "gallery", 
 #         "strip", "confetti", "crystal", "neon", "polaroid", 

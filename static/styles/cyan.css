@@ -603,7 +603,7 @@ body.theme-cyan .hero-section {
     position: relative;
     padding: 70px 45px;
     margin-bottom: 50px;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-radius: 20px;
     overflow: hidden;
     background:
         linear-gradient(135deg, #00BCD4 0%, #0097A7 50%, #006064 100%);

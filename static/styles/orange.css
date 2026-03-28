@@ -2393,31 +2393,30 @@ footer {
    ORANGE THEME UNIQUE LAYOUT
    ======================================== */
 
-/* Orange: 斜角卡片布局 */
+/* Orange: 橙色主题 - 使用正常布局 */
 body.theme-orange .news-grid {
     display: grid;
     gap: 20px;
-    transform: skewY(-2deg);
     margin: 20px 0;
 }
 
 body.theme-orange .news-card {
-    transform: skewY(2deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.theme-orange .news-card:hover {
-    transform: skewY(2deg) translateY(-5px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
 }
 
+/* Hero区域保持圆角矩形，不应用斜角效果 */
 body.theme-orange .hero-section {
-    transform: skewY(-2deg);
-    margin-bottom: 30px;
+    transform: none;
+    margin-bottom: 50px;
 }
 
 body.theme-orange .hero-content {
-    transform: skewY(2deg);
+    transform: none;
 }
 
 @media (max-width: 768px) {
